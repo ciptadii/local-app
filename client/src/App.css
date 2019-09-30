@@ -1,0 +1,73 @@
+body{
+  background-color: aliceblue;
+}
+
+.login-form {
+    max-width: 350px;
+  }
+
+.login-form-forgot {
+    text-align: center;
+  }
+
+.login-form-button {
+  width: 300px;
+  margin: 13px;
+  }
+
+.continer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    }
+
+/* Home */
+
+.Menu{
+  background-color: rgba(0, 0, 0, 0.822);
+  color: white;
+}
+
+.Header{
+  width: 1040px;
+  margin: auto;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+.PageHeader{
+  display: inline-block;
+}
+
+/* Manager */
+.continerAccount {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 150px;
+  }
+
+  /* Register */
+.Form-Register{
+  text-align: center;
+  
+}
+
+.Button-Register{
+  width: 350px;
+}
+
+
+  /* Reset */
+  .Button-Reset{
+    float: center;
+    margin-left: 230px;
+  }
