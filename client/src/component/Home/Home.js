@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon, Button, Avatar, PageHeader, Input, Collapse, Select } from 'antd';
 import { Link } from 'react-router-dom';
-import Navbar from './Navbar';
+import Navbar from '../Navbar/Navbar';
 
 const { Search } = Input;
 const { Panel } = Collapse;
@@ -47,7 +47,7 @@ class Home extends React.Component {
                     <div className="PageHeader">
                         <PageHeader  title="Game"
                             style ={{width: 710, paddingLeft: 0, paddingRight: 0 ,float: 'left'}}/>
-                        <Search placeholder="Search App or Developer" onSearch={value => console.log(value)} style ={{width: 330, paddingTop: 24, paddingBottom: 24 ,float: 'right'}} enterButton />
+                        <Search placeholder="Search App or Developer" onSearch={value => console.log(value)} style ={{width: '30%', paddingTop: 24, paddingBottom: 24 }} enterButton />
                         <Button type='link' style ={{float: 'right'}}>< h4><Icon type="plus-circle" theme="twoTone" /> Member</h4></Button>          
                         <Button type='link' style ={{float: 'right'}}>< h4><Icon type="plus-circle" theme="twoTone" /> Developer</h4></Button>          
                         <Button onClick={this.handleClick.bind(this)} type='link' style ={{float: 'right'}}>< h4><Icon type="plus-circle" theme="twoTone" /> App</h4></Button>
@@ -79,7 +79,7 @@ class Home extends React.Component {
                 <Select value={expandIconPosition} onChange={this.onPositionChange} style ={{float: 'right', marginRight: '50%', marginTop: '20px'}} >
                     <Option value="left">left</Option>
                     <Option value="right">right</Option>
-                    </Select>
+                </Select>
             </div>
         </React.Fragment>
     );

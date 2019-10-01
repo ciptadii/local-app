@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {Form, Input, Icon, Button, Card, Avatar } from 'antd';
-import { register } from './UserFunctions'
+import { register } from '../UserFunctions'
 
   class Register extends React.Component {
     constructor() {
@@ -26,14 +26,20 @@ import { register } from './UserFunctions'
           email: this.state.email,
           password: this.state.password
         }
-    
+
         register(newUser).then(_res => {
           this.props.history.push('/Login')
         })
+
+        this.props.form.validateFields((err, setFieldsValue) => {
+          if (!err) {
+            console.log('Received values of form: ', setFieldsValue);
+          }
+        });
       }
   
     render() {
-    
+      const { getFieldDecorator } = this.props.form;
       return (
       <div className='continer'>
         <Avatar size={64} src="https://t4.ftcdn.net/jpg/02/37/83/65/500_F_237836548_QZ5lcLl0Le4fhjal2MlgOPK3dyDMBbfR.jpg" 
@@ -42,16 +48,23 @@ import { register } from './UserFunctions'
         <Form noValidate onSubmit={this.onSubmit}>
           <Form.Item style={{ textAlign: 'center',}}><h2>Register</h2></Form.Item>
           <Form.Item label="E-mail">
-            <Input 
-                type="email"
-                className="form-control"
-                name="email"
-                placeholder="Enter email"
-                value={this.state.email}
-                onChange={this.onChange}
-            />
+            {getFieldDecorator('email', {
+              rules: [{ required: true, message: 'Please input your Email!' }],
+            })(
+              <Input 
+                  type="email"
+                  className="form-control"
+                  name="email"
+                  placeholder="Enter email"
+                  value={this.state.email}
+                  onChange={this.onChange}
+              />
+            )}
           </Form.Item>
           <Form.Item label="Password" hasFeedback>
+            {getFieldDecorator('password', {
+              rules: [{ required: true, message: 'Please input your Password!' }],
+            })(
             <Input
                 type="password"
                 className="form-control"
@@ -60,6 +73,7 @@ import { register } from './UserFunctions'
                 value={this.state.password}
                 onChange={this.onChange}
             />
+            )}
           </Form.Item>
           <Form.Item className="Form-Register">
               <Button type="primary" htmlType="submit" className="Button-Register" >
@@ -74,4 +88,5 @@ import { register } from './UserFunctions'
     }
   }
   
-  export default Register;
+const HorizontalRegisterForm = Form.create({ name: 'register' })(Register)
+export default HorizontalRegisterForm;

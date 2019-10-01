@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button,Menu, Icon, Avatar } from 'antd';
+import { Button, Menu, Icon, Avatar } from 'antd';
 import { Link } from 'react-router-dom';
 
 const { SubMenu } = Menu;
@@ -21,7 +21,7 @@ const { SubMenu } = Menu;
             <div>
                 <Menu className="Menu" onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
                     <Avatar src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-joystick-game-graphic-design-element-vector-illustration-png-image_3698982.jpg" style={{margin: "10px"}} />
-                    <Button type="link" style={{marginLeft: "150px", color: 'white' }} ><Link to="/">< h3 style={{ color: 'white' }}>Overview</h3></Link></Button>
+                    <Button type="link" style={{marginLeft: "150px", color: 'white' }}><Link to="/">< h3 style={{ color: 'white' }}>Overview</h3></Link></Button>
                     <SubMenu
                     style={{ position: "absolute", right: "0px"}}
                     title={

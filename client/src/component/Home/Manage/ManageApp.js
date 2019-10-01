@@ -1,8 +1,8 @@
 import React from 'react';
 import { Form, Input, Button, Card, PageHeader } from 'antd';
-import Navbar from './Navbar';
+import Navbar from '../../Navbar/Navbar';
 
-class ManageDev extends React.Component {
+class ManageApp extends React.Component {
     state = {
       confirmDirty: true,
       autoCompleteResult: [],
@@ -45,19 +45,19 @@ class ManageDev extends React.Component {
 
     logoutHandler =(e) => {
       this.props.history.push('/login')
-  };
+    };
   
     render() {
 
       return (
         <React.Fragment>
             <Navbar/>
-                <PageHeader  title="Manage Developer"
+                <PageHeader  title="Manage Application"
                     style ={{width: 710, paddingLeft: 200, paddingRight: 0 ,float: 'left'}}/>
             <div className='continerAccount'>
                 <Card bordered={false} style={{ textAlign: 'center', width: 600, boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)' }}>
                     <Form onSubmit={this.handleSubmit}>
-                    <Form.Item label="Name Developer">
+                    <Form.Item label="Name Application">
                         <Input />
                     </Form.Item>
                     <Form.Item label="Name Game">
@@ -76,4 +76,4 @@ class ManageDev extends React.Component {
     }
   }
   
-  export default Form.create()(ManageDev);
+  export default Form.create()(ManageApp);

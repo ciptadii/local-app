@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageHeader, Card, Table} from 'antd';
-import Navbar from './Navbar';
+import Navbar from '../../Navbar/Navbar';
 
 const columns = [
     {

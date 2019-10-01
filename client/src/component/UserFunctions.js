@@ -6,8 +6,8 @@ export const register = newUser => {
       email: newUser.email,
       password: newUser.password
     })
-    .then(_response => {
-      console.log('Registered')
+    .then(function (response) {
+      console.log(response('Registered!'))
     })
     .catch(err => {
       console.log(err.response)

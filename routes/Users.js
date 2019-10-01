@@ -32,13 +32,10 @@ users.post('/register', (req, res) =>{
                     .catch(err => {
                         res.send('error: ' + err)
                     })
-            })
-        }else {
-            res.json({ error: 'User alredy exsist' })
-        }
-    })
-    .catch(err => {
-        res.send('error: ' + err)
+                })
+            } else {
+                res.json({ error: 'User alredy exsist' })
+          }
     })
 })
 
@@ -52,8 +49,6 @@ users.post('/Login', (req, res) => {
           // Passwords match
           const payload = {
             _id: user._id,
-            first_name: user.first_name,
-            last_name: user.last_name,
             email: user.email
           }
           let token = jwt.sign(payload, process.env.SECRET_KEY, {
