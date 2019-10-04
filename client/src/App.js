@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter , Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from './component/Login/Login';
 import Home from './component/Home/Home';
 import Register from './component/Register/Register';
@@ -13,19 +13,19 @@ import './App.css';
 
 function App() {
   return (
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/forgot" component={Forgot} />
-            <Route exact path="/reset" component={Reset} />
-            <Route exact path="/ManageAccount" component={ManageAccount} />
-            <Route exact path="/ManegeApp" component={ManegeApp} />
-            <Route exact path="/ManageDev" component={ManageDev} />
-            <Route exact path="/Member" component={Member} />
-          </Switch>
-        </BrowserRouter>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/forgot" component={Forgot} />
+        <Route exact path="/reset" component={Reset} />
+        <Route exact path="/ManageAccount" component={ManageAccount} />
+        <Route exact path="/ManegeApp" component={ManegeApp} />
+        <Route exact path="/ManageDev" component={ManageDev} />
+        <Route exact path="/Member" component={Member} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

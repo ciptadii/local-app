@@ -1,4 +1,6 @@
 import axios from 'axios'
+import { push } from 'connected-react-router'
+import { sendResetPasswordLink } from '../api/index'
 
 export const register = newUser => {
   return axios
@@ -7,7 +9,7 @@ export const register = newUser => {
       password: newUser.password
     })
     .then(function (response) {
-      console.log(response('Registered!'))
+      console.log('Registered!')
     })
     .catch(err => {
       console.log(err.response)
@@ -27,7 +29,11 @@ export const login = user => {
     .catch(err => {
       console.log(err.response)
     })
-
 }
 
-
+export const attemptSendResetPasswordLink = email => async dispatch => {
+  return await sendResetPasswordLink(email).catch(
+    dispatch(push('/forgot'))
+  );
+};
+ 
