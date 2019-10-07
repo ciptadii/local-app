@@ -1,8 +1,6 @@
 import React from 'react';
 import { Form, Icon, Input, Card, Avatar, Button, } from 'antd';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { attemptSendResetPasswordLink } from '../UserFunctions';
 class Forgot extends React.Component {
   constructor(props) {
     super(props);
@@ -52,9 +50,8 @@ class Forgot extends React.Component {
 
   render() {
     const { username, submitted } = this.state;
-
+    
     return (
-      <React.Fragment>
       <div className='continer' >
         <Avatar size={64} src="https://t4.ftcdn.net/jpg/02/37/83/65/500_F_237836548_QZ5lcLl0Le4fhjal2MlgOPK3dyDMBbfR.jpg"
           style={{ margin: '30px', marginLeft: '170px' }} />
@@ -80,18 +77,8 @@ class Forgot extends React.Component {
             )}
           </Card>
       </div>
-      </React.Fragment>
     );
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    attemptSendResetPasswordLink: email =>
-      dispatch(attemptSendResetPasswordLink(email))
-  };
-}
-
-export default connect(
-  mapDispatchToProps
-)(Forgot);
+export default Forgot;

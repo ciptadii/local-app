@@ -9,6 +9,7 @@ import ManegeApp from './component/Home/Manage/ManageApp';
 import ManageDev from './component/Home/Manage/ManageDev';
 import Member from './component/Home/Manage/Member';
 import Forgot from './component/Forget/Forgot';
+import Todo from './Todo'
 import './App.css';
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
         <Route exact path="/ManegeApp" component={ManegeApp} />
         <Route exact path="/ManageDev" component={ManageDev} />
         <Route exact path="/Member" component={Member} />
+        <Route exact path="/Todo" component={Todo} />
+
       </Switch>
     </BrowserRouter>
   );

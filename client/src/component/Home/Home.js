@@ -5,7 +5,6 @@ import Navbar from '../Navbar/Navbar';
 
 const { Search } = Input;
 const { Panel } = Collapse;
-const { Option } = Select;
 
 function callback(key) {
   console.log(key);
@@ -100,8 +99,6 @@ class Home extends React.Component {
             </Panel>
           </Collapse>
           <Select value={expandIconPosition} onChange={this.onPositionChange} style={{ float: 'right', marginRight: '50%', marginTop: '20px' }} >
-            <Option value="left">left</Option>
-            <Option value="right">right</Option>
           </Select>
         </div>
       </React.Fragment>
