@@ -6,11 +6,11 @@ export const register = newUser => {
       email: newUser.email,
       password: newUser.password
     })
-    .then(function (response) {
-      console.log('Registered!')
+    .then(response => {
+      console.log('Registered!');     
     })
     .catch(err => {
-      console.log(err.response)
+      console.error(err.response)
     })
 }
 

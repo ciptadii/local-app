@@ -66,12 +66,11 @@ class Home extends React.Component {
         <Navbar />
         <div className="Header">
           <div className="PageHeader">
-            <PageHeader title="Game"
-              style={{ width: 710, paddingLeft: 0, paddingRight: 0, float: 'left' }} />
-            <Search placeholder="Search App or Developer" onSearch={value => console.log(value)} style={{ width: '30%', paddingTop: 24, paddingBottom: 24 }} enterButton />
-            <Button type='link' style={{ float: 'right' }}>< h4><Link to="/Member"/><Icon type="plus-circle" theme="twoTone" /> Member </h4></Button>
-            <Button type='link' style={{ float: 'right' }}>< h4><Icon type="plus-circle" theme="twoTone" /> Developer</h4></Button>
-            <Button onClick={this.showModal} type='link' style={{ float: 'right' }}>< h4><Icon type="plus-circle" theme="twoTone" /> App</h4></Button>
+            <PageHeader title="Game"/>
+            <Search placeholder="Search App or Developer" onSearch={value => console.log(value)} style={{ width: 300, margin: '20px auto auto'}} enterButton />
+            <Button onClick={this.showModal} type='link' style={{ margin: 20}} >< h4><Icon type="plus-circle" theme="twoTone" /> App</h4></Button>
+            <Button type='link' style={{ margin: 20}} >< h4><Icon type="plus-circle" theme="twoTone" /> Developer</h4></Button>            
+            <Button type='link' style={{ margin: 20}} >< h4><Link to="/Member"/><Icon type="plus-circle" theme="twoTone" /> Member </h4></Button>
               <Modal
                 title="Add Application"
                 okText="Create"

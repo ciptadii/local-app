@@ -34,9 +34,9 @@ class Login extends Component{
         this.props.history.push('/')
       }
     })
-    this.props.form.validateFields((err, setFieldsValue) => {
+    this.props.form.validateFields((err, initialValue) => {
       if (!err) {
-        console.log('Received values of form: ', setFieldsValue);
+        console.log('Received values of form: ', initialValue);
       }
     });
   }

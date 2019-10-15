@@ -27,7 +27,8 @@ import { register } from '../UserFunctions'
           password: this.state.password
         }
 
-        register(newUser).then(_res => {
+        register(newUser)
+          .then(_res => {
           this.props.history.push('/Login')
         })
 

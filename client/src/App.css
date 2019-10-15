@@ -31,15 +31,14 @@ body{
   color: white;
 }
 
-.Header{
-  width: 1040px;
-  margin: auto;
-  margin-top: 20px;
-  box-sizing: border-box;
+.PageHeader {
+
+  height: '100vh'
 }
 
-.PageHeader{
-  display: inline-block;
+.Header{
+  width: 70%;
+  margin: 10px auto auto;
 }
 
 /* Manager */

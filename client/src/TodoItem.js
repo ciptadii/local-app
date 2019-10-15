@@ -9,7 +9,7 @@ class TodoItems extends Component {
   }
 
   createTasks(item) {
-    return <li key={item.key}>{item.text}</li>
+    return <div key={item.key}>{item.text}</div>
   }
 
   delete(key) {
