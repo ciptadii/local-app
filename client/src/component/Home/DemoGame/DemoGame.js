@@ -76,7 +76,7 @@ class DemoGame extends React.Component {
               position: 'fixed',
               height: '100vh',
               left: 0,
-              zIndex: 100
+              zIndex: 1
             }}>
 
             <Button type='link' style={{ width: '200px', height: '50px', padding: 0 }}>
