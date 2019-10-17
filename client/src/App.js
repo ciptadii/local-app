@@ -27,7 +27,7 @@ function App() {
         <Route exact path="/ManegeApp" component={ManegeApp} />
         <Route exact path="/ManageDev" component={ManageDev} />
         <Route exact path="/Member" component={Member} />
-        <Route exact path="/Game/:id/Dashboard" component={DemoGame} />
+        <Route exact path="/game/:id/dashboard" component={DemoGame} />
         <Route component={NotMatch} />
       </Switch>
     </BrowserRouter>

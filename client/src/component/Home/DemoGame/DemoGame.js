@@ -1,6 +1,19 @@
 import React from 'react';
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
-import { Layout, Menu, Icon, Avatar, Dropdown, Button, Input } from 'antd';
+import { 
+  BrowserRouter, 
+  Route, 
+  Link, 
+  Switch 
+} from "react-router-dom";
+import { 
+  Layout, 
+  Menu, 
+  Icon, 
+  Avatar, 
+  Dropdown, 
+  Button, 
+  Input 
+} from 'antd';
 
 import Monetization from './Dashboard/Monetization';
 import Resources from './Dashboard/Resources';
@@ -20,14 +33,6 @@ class DemoGame extends React.Component {
     this.setState({ collapsed });
   };
 
-  // handle click header
-  handleClick = e => {
-    console.log('click', e);
-    this.setState({
-      current: e.key,
-    });
-  }
-
   // handle click menu
   handleMenuClick = e => {
     if (e.key === '3') {
@@ -40,6 +45,7 @@ class DemoGame extends React.Component {
   };
 
   render() {
+    // menu dropdown header
     const menu = (
       <Menu onClick={this.handleMenuClick}>
         <Menu.Item key="0">
@@ -52,7 +58,7 @@ class DemoGame extends React.Component {
         <Menu.Item key="1">
           <Link to="/"><Icon type="home" theme="twoTone" /> <span> Home</span></Link>
         </Menu.Item>
-        <Menu.Item key="1">
+        <Menu.Item key="2">
           <Link to="">
             <Avatar
               src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-joystick-game-graphic-design-element-vector-illustration-png-image_3698982.jpg"
@@ -120,11 +126,11 @@ class DemoGame extends React.Component {
                 <Menu.Item key="benchmarks"><Icon type="deployment-unit" />Benchmarks</Menu.Item>
                 <Menu.Item key="monetization"><Icon type="deployment-unit" />
                   Monetization
-                  <Link to='/Game/1782/Dashboard/Show/Monetization' />
+                  <Link to='/game/1782/dashboard/show/monetization' />
                 </Menu.Item>
                 <Menu.Item key="resources"><Icon type="deployment-unit" />
                   Resources
-                  <Link to='/Game/1782/Dashboard/Show/Resources' />
+                  <Link to='/game/1782/dashboard/show/resources' />
                 </Menu.Item>
                 <Menu.Item key="progression"><Icon type="deployment-unit" />Progression</Menu.Item>
                 <Menu.Item key="quality"><Icon type="deployment-unit" />Quality</Menu.Item>
@@ -148,8 +154,8 @@ class DemoGame extends React.Component {
             {/* <main style={{ width: '1519.200px', marginLeft: '200px', zIndex: 50 }}> */}
             <Content>
               <Switch>
-                <Route exact path="/Game/:id/Dashboard/Show/Monetization" component={Monetization} />
-                <Route exact path="/Game/:id/Dashboard/Show/Resources" component={Resources} />
+                <Route exact path="/game/:id/dashboard/show/monetization" component={Monetization} />
+                <Route exact path="/game/:id/dashboard/show/resources" component={Resources} />
               </Switch>
             </Content>
             {/* </main> */}

@@ -1,16 +1,26 @@
 import React from 'react';
-import { Icon, Button, Avatar, PageHeader, Input, List } from 'antd';
+import {
+  Icon,
+  Button,
+  Avatar,
+  PageHeader,
+  Input,
+  List,
+  Menu,
+  Dropdown
+} from 'antd';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 
 const { Search } = Input;
 
 const data = [
-  'Demo Game', 
+  'Demo Game',
 ];
 
 class Home extends React.Component {
   state = {
+    visible: false,
   };
 
   onPositionChange = expandIconPosition => {
@@ -25,6 +35,35 @@ class Home extends React.Component {
   };
 
   render() {
+    // menu dropdown header list
+    const menuHeader = (
+      <Menu onClick={this.handleMenuClick}>
+        <Menu.Item key="0">
+          Add game
+        </Menu.Item>
+        <Menu.Item key="1">
+          Settings
+        </Menu.Item>
+        <Menu.Item key="2">
+          Archive
+        </Menu.Item>
+      </Menu>
+    );
+
+    const menuList = (
+      <Menu onClick={this.handleMenuClick}>
+        <Menu.Item key="0">
+          Settings
+        </Menu.Item>
+        <Menu.Item key="1">
+          Hide
+        </Menu.Item>
+        <Menu.Item key="2">
+          Archive
+        </Menu.Item>
+      </Menu>
+    );
+
     return (
       <React.Fragment>
         <Navbar />
@@ -43,11 +82,15 @@ class Home extends React.Component {
               header={
                 <div>
                   <div style={{ paddingRight: '12px', width: '155px', display: 'inline-block' }}>
-                    <h2 style={{ margin: '0px' }}>GameAnalytics</h2>
+                      <h2 style={{ margin: '0px' }}>GameAnalytics</h2>
                   </div>
-                  <Button type='link' style={{ padding: '0px 12px', paddingRight: '0px', float: 'right', border: 0, height: '31.2px' }}>
-                    <Icon type="more" style={{ fontSize: '17px', color: 'black' }} />
-                  </Button>
+                  <Dropdown
+                    overlay={menuHeader}
+                  >
+                    <Button type='link' style={{ padding: '0px 12px', paddingRight: '0px', float: 'right', border: 0, height: '31.2px' }}>
+                      <Icon type="more" style={{ fontSize: '17px', color: 'black' }} />
+                    </Button>
+                  </Dropdown>
                   <Button style={{ padding: '0px 12px', float: 'right', height: '31.2px' }}>
                     <b>Archive</b>
                   </Button>
@@ -69,15 +112,19 @@ class Home extends React.Component {
                       <Avatar shape="square" size={50} icon="user" />
                     </div>
                     <div style={{ padding: '0px 0px 0px 12px', display: 'inline-block' }}>
-                      <Button type="link" ><Link to="/game/1782/Dashboard"><b>{item}</b></Link></Button>
+                      <Button type="link" ><Link to="/game/1782/dashboard"><b>{item}</b></Link></Button>
                     </div>
                   </div>
-                  <a href='fake' style={{ width: '161px', height: '50px', borderLeft: '1px solid #f3f2f2', textAlign: 'center' }}><b>DAU</b></a>
-                  <a href='fake' style={{ width: '161px', height: '50px', borderLeft: '1px solid #f3f2f2', textAlign: 'center' }}><b>New users</b></a>
-                  <a href='fake' style={{ width: '161px', height: '50px', borderLeft: '1px solid #f3f2f2', textAlign: 'center' }}><b>ARPDAU</b></a>
-                  <Button type='link' style={{ padding: '0px 12px', paddingRight: '0px', float: 'right', border: 0, height: '31.2px' }}>
-                    <Icon type="more" style={{ fontSize: '17px', color: 'black' }} />
-                  </Button>
+                  <a href='/game/1782/dashboard' style={{ width: '161px', height: '50px', borderLeft: '1px solid #f3f2f2', textAlign: 'center' }}><b>DAU</b></a>
+                  <a href='/game/1782/dashboard' style={{ width: '161px', height: '50px', borderLeft: '1px solid #f3f2f2', textAlign: 'center' }}><b>New users</b></a>
+                  <a href='/game/1782/dashboard' style={{ width: '161px', height: '50px', borderLeft: '1px solid #f3f2f2', textAlign: 'center' }}><b>ARPDAU</b></a>
+                  <Dropdown
+                    overlay={menuList}
+                  >
+                    <Button type='link' style={{ padding: '0px 12px', paddingRight: '0px', float: 'right', border: 0, height: '31.2px' }}>
+                      <Icon type="more" style={{ fontSize: '17px', color: 'black' }} />
+                    </Button>
+                  </Dropdown>
                 </List.Item>}
               style={{ background: 'white' }}
             />
