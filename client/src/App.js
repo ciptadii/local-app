@@ -11,6 +11,7 @@ import ManageDev from './component/Home/Manage/ManageDev';
 import Member from './component/Home/Manage/Member';
 import Forget from './component/Forget/Forget';
 import DemoGame from './component/Home/DemoGame/DemoGame';
+import Monetization from './component/Home/DemoGame/DemoGame'
 import NotMatch from './component/Errors/404';
 import './App.css';
 
@@ -19,14 +20,15 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/forget" component={Forget} />
-        <Route exact path="/reset" component={Reset} />
-        <Route exact path="/ManageAccount" component={ManageAccount} />
-        <Route exact path="/ManegeApp" component={ManegeApp} />
-        <Route exact path="/ManageDev" component={ManageDev} />
-        <Route exact path="/Member" component={Member} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+        <Route path="/forget" component={Forget} />
+        <Route path="/reset" component={Reset} />
+        <Route path="/ManageAccount" component={ManageAccount} />
+        <Route path="/ManegeApp" component={ManegeApp} />
+        <Route path="/ManageDev" component={ManageDev} />
+        <Route path="/Member" component={Member} />
+        <Route path="/game/:id/dashboard/show/monetization" component={Monetization} />
         <Route exact path="/game/:id/dashboard" component={DemoGame} />
         <Route component={NotMatch} />
       </Switch>

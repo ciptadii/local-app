@@ -112,7 +112,7 @@ class Home extends React.Component {
                       <Avatar shape="square" size={50} icon="user" />
                     </div>
                     <div style={{ padding: '0px 0px 0px 12px', display: 'inline-block' }}>
-                      <Button type="link" ><Link to="/game/1782/dashboard"><b>{item}</b></Link></Button>
+                      <Button type="link" ><Link to="/game/1782/dashboard/show/monetization"><b>{item}</b></Link></Button>
                     </div>
                   </div>
                   <a href='/game/1782/dashboard' style={{ width: '161px', height: '50px', borderLeft: '1px solid #f3f2f2', textAlign: 'center' }}><b>DAU</b></a>
