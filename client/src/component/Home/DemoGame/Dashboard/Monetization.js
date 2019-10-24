@@ -65,7 +65,7 @@ export class Monetization extends Component {
     current: 'Summary',
     submenu: 'Monetization',
     chartData: {},
-    isLoading: true
+    isLoading: true,
   };
 
   componentDidMount() {
@@ -90,6 +90,35 @@ export class Monetization extends Component {
 
   render() {
     const { chartData } = this.state;
+    
+    // wait data
+    if(this.state.isLoading){
+      return(
+        <p>wait</p>
+      )
+    } 
+    const date = chartData.thisWeek;
+    const revenue = chartData.revenue;
+    const transactions = chartData.transactions;
+    const conversionRate = chartData.conversionRate;
+    const ARPDAU = chartData.ARPDAU;
+
+    // const dataLoaded = [];
+    // if(chartData.thisWeek){
+    //   chartData.thisWeek.forEach((item, key) => {
+    //     dataLoaded.push({
+    //       key,
+    //       date: item,
+    //       revenue: 32,
+    //       transactions: 'New York No. 1 Lake Park',
+    //       conversion: 'nice',
+    //       arpdau: 'good',
+    //       arppu: 'excelent',
+    //       dau: 'bad'
+    //     })
+    //   })
+    // }console.log(dataLoaded);
+    
 
     // Cascade
     function onChange(value) {
@@ -106,68 +135,85 @@ export class Monetization extends Component {
       },
       {
         title: 'Revenue per transaction',
-        dataIndex: 'age',
-        key: 'age',
+        dataIndex: 'revenue',
+        key: 'revenue',
       },
       {
         title: 'Transactions',
-        dataIndex: 'address',
-        key: 'address',
-      },
-      {
-        title: 'Transactions',
-        dataIndex: 'address',
-        key: 'address',
+        dataIndex: 'transactions',
+        key: 'transactions',
       },
       {
         title: 'Conversion rate',
-        dataIndex: 'address',
-        key: 'address',
+        dataIndex: 'conversion',
+        key: 'conversion',
       },
       {
         title: 'ARPDAU',
-        dataIndex: 'address',
-        key: 'address',
+        dataIndex: 'arpdau',
+        key: 'arpdau',
       },
-      {
-        title: 'ARPPU',
-        dataIndex: 'address',
-        key: 'address',
-      },
-      {
-        title: 'DAU',
-        dataIndex: 'address',
-        key: 'address',
-      },
-      {
-        title: 'Revenue per transaction',
-        dataIndex: 'address',
-        key: 'address',
-      }
+      // {
+      //   title: 'ARPPU',
+      //   dataIndex: 'arppu',
+      //   key: 'arppu',
+      // },
+      // {
+      //   title: 'DAU',
+      //   dataIndex: 'dau',
+      //   key: 'dau',
+      // }
     ];
 
     const data = [
       {
         key: '1',
-        date: chartData.thisWeek,
-        age: 32,
-        address: 'New York No. 1 Lake Park',
-        tags: ['nice', 'developer'],
+        date: date[0],
+        revenue: "$" + revenue[0],
+        transactions: "$" + transactions[0],
+        conversion: conversionRate[0] + "%",
+        arpdau: "$" + ARPDAU[0]
       },
       {
         key: '2',
-        name: 'Jim Green',
-        age: 42,
-        address: 'London No. 1 Lake Park',
-        tags: ['loser'],
+        date: date[1],
+        revenue: "$" + revenue[1],
+        transactions: "$" + transactions[1],
+        conversion: conversionRate[1] + "%",
+        arpdau: "$" + ARPDAU[1]
       },
       {
         key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sidney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
+        date: date[2],
+        revenue: "$" + revenue[2],
+        transactions: "$" + transactions[2],
+        conversion: conversionRate[2] + "%",
+        arpdau: "$" + ARPDAU[2]
       },
+      {
+        key: '4',
+        date: date[3],
+        revenue: "$" + revenue[3],
+        transactions: "$" + transactions[3],
+        conversion: conversionRate[3] + "%",
+        arpdau: "$" + ARPDAU[3]
+      },
+      {
+        key: '5',
+        date: date[4],
+        revenue: "$" + revenue[4],
+        transactions: "$" + transactions[4],
+        conversion: conversionRate[4] + "%",
+        arpdau: "$" + ARPDAU[4]
+      },
+      {
+        key: '6',
+        date: "Total",
+        revenue: "$" + ( revenue[0] + revenue[1] + revenue[2] + revenue[3] + revenue[4] ),
+        transactions: "$" + ( transactions[0] + transactions[1] + transactions[2] + transactions[3] + transactions[4] ),
+        conversion: ( conversionRate[0] + conversionRate[1] + conversionRate[2] + conversionRate[3] + conversionRate[4] ).toFixed(2) + "%",
+        arpdau: "$" + ( ARPDAU[0] + ARPDAU[1] + ARPDAU[2] + ARPDAU[3] + ARPDAU[4] )
+      }
     ];
 
     return (

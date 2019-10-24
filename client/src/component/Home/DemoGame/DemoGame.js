@@ -15,7 +15,6 @@ import {
   Input 
 } from 'antd';
 
-import './DemoGame';
 import Monetization from './Dashboard/Monetization';
 import Resources from './Dashboard/Resources';
 
@@ -72,7 +71,7 @@ class DemoGame extends React.Component {
     );
 
     return (
-      <BrowserRouter>
+      // <BrowserRouter>
         <Layout>
           <Sider
             collapsible
@@ -155,7 +154,6 @@ class DemoGame extends React.Component {
             {/* <main style={{ width: '1519.200px', marginLeft: '200px', zIndex: 50 }}> */}
             <Content>
               <Switch>
-                <Route exact path="/game/:id/dashboard" component={DemoGame} />
                 <Route path="/game/:id/dashboard/show/monetization" component={Monetization} />
                 <Route path="/game/:id/dashboard/show/resources" component={Resources} />
               </Switch>
@@ -163,7 +161,7 @@ class DemoGame extends React.Component {
             {/* </main> */}
           </Layout>
         </Layout>
-      </BrowserRouter>
+      // </BrowserRouter>
     );
   }
 }
