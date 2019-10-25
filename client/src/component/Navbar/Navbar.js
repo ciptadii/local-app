@@ -4,16 +4,21 @@ import { Link } from 'react-router-dom';
 
 const { SubMenu } = Menu;
 
-export default class Navbar extends Component {
-    state = {
-        confirmDirty: true,
-        expandIconPosition: 'left',
-    };
+class Navbar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            confirmDirty: true,
+            expandIconPosition: 'left',
+          };
+        this.logOut = this.logOut.bind(this);
+      };
 
-    logoutHandler = (e) => {
+    logOut(_e) {
+       
         localStorage.removeItem('usertoken')
-        this.props.history.push('/');
-    };
+        this.props.history.push('/login')
+      }
 
     render() {
         return (
@@ -35,7 +40,7 @@ export default class Navbar extends Component {
                                 <Menu.Item key="setting:2"><Icon type="exclamation-circle" theme="filled" />Developers <Link to="/ManageDev" /></Menu.Item>
                                 <Menu.Item key="setting:3"><Icon type="file-done" />Applications<Link to="/ManageApp" /></Menu.Item>
                                 <Menu.Item key="setting:4"><Icon type="setting" />Members<Link to="/Member" /></Menu.Item>
-                                <Menu.Item key="setting:5" onClick={this.logoutHandler.bind(this)}><Icon type="logout" />Logout</Menu.Item>
+                                <Menu.Item key="setting:5" onClick={this.logOut}><Icon type="logout" />Logout</Menu.Item>
                             </Menu.ItemGroup>
                         </SubMenu>
                     </Menu>
@@ -45,3 +50,4 @@ export default class Navbar extends Component {
     }
 };
 
+export default Navbar;
