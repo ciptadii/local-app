@@ -36,6 +36,7 @@ class Home extends React.Component {
   };
 
   render() {
+
     // menu dropdown header list
     const menuHeader = (
       <Menu onClick={this.handleMenuClick}>
