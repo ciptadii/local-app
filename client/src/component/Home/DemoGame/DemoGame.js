@@ -15,8 +15,8 @@ import {
   Input 
 } from 'antd';
 
-import Monetization from './Dashboard/Monetization';
-import Resources from './Dashboard/Resources';
+import Monetization from '../DemoGame/Dashboard/Monetization/Monetization';
+import Resources from './Dashboard/Resources/Resources';
 
 const { Content, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -27,7 +27,7 @@ class DemoGame extends React.Component {
     collapsed: false,
     visible: false,
   };
-  
+
   onCollapse = collapsed => {
     console.log(collapsed);
     this.setState({ collapsed });
