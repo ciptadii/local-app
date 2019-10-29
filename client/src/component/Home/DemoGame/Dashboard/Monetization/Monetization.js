@@ -1,19 +1,28 @@
 import React, { Component } from 'react';
+import { 
+  Route, 
+  Link, 
+  Switch,
+  withRouter
+} from "react-router-dom";
 import {
-  Card,
-  Row,
-  Col,
+  // Card,
+  // Row,
+  // Col,
   Layout,
   Menu,
   Icon,
   Button,
-  Spin,
-  Table,
+  // Spin,
+  // Table,
   DatePicker,
   Cascader
 } from 'antd';
 import moment from 'moment';
-import { Line, Bar } from '../../../../../node_modules/react-chartjs-2';
+// import { Line, Bar } from 'react-chartjs-2';
+
+import Summary from './Summary';
+import Monetization_behaviour from './Monetization_behaviour';
 
 // Menu Header
 const { Header } = Layout;
@@ -64,15 +73,15 @@ export class Monetization extends Component {
   state = {
     current: 'Summary',
     submenu: 'Monetization',
-    chartData: {},
-    isLoading: true
+    // chartData: {},
+    // isLoading: true,
   };
 
-  componentDidMount() {
-    fetch('https://my-json-server.typicode.com/ciptadii/jsonserver/db')
-      .then(response => response.json())
-      .then(data => this.setState({ chartData: data, isLoading: false }))
-  }
+  // componentDidMount() {
+  //   fetch('https://my-json-server.typicode.com/ciptadii/jsonserver/db')
+  //     .then(response => response.json())
+  //     .then(data => this.setState({ chartData: data, isLoading: false }))
+  // }
 
   // handle click header
   handleClick = e => {
@@ -83,13 +92,43 @@ export class Monetization extends Component {
   }
 
   // default props chart
-  static defaultProps = {
-    displayLegend: true,
-    legendPosition: 'top'
-  }
+  // static defaultProps = {
+  //   displayLegend: true,
+  //   legendPosition: 'top'
+  // }
 
   render() {
-    const { chartData } = this.state;
+    const { path, url } = this.props.match;
+    // const { chartData } = this.state;
+
+    // // wait data
+    // if(this.state.isLoading){
+    //   return(
+    //     <p>wait</p>
+    //   )
+    // } 
+    // const date = chartData.thisWeek;
+    // const revenue = chartData.revenue;
+    // const transactions = chartData.transactions;
+    // const conversionRate = chartData.conversionRate;
+    // const ARPDAU = chartData.ARPDAU;
+
+    // const dataLoaded = [];
+    // if(chartData.thisWeek){
+    //   chartData.thisWeek.forEach((item, key) => {
+    //     dataLoaded.push({
+    //       key,
+    //       date: item,
+    //       revenue: 32,
+    //       transactions: 'New York No. 1 Lake Park',
+    //       conversion: 'nice',
+    //       arpdau: 'good',
+    //       arppu: 'excelent',
+    //       dau: 'bad'
+    //     })
+    //   })
+    // }console.log(dataLoaded);
+
 
     const dataLoaded =  [];
     if(chartData.thisWeek){
@@ -110,58 +149,49 @@ export class Monetization extends Component {
     }
 
     // Table
-    const columns = [
-      {
-        title: 'Date',
-        dataIndex: 'date',
-        key: 'date',
-        render: text => <a>{text}</a>,
-      },
-      {
-        title: 'Revenue per transaction',
-        dataIndex: 'age',
-        key: 'age',
-      },
-      {
-        title: 'Transactions',
-        dataIndex: 'address',
-        key: 'address',
-      },
-      {
-        title: 'Transactions',
-        dataIndex: 'address',
-        key: 'address',
-      },
-      {
-        title: 'Conversion rate',
-        dataIndex: 'address',
-        key: 'address',
-      },
-      {
-        title: 'ARPDAU',
-        dataIndex: 'address',
-        key: 'address',
-      },
-      {
-        title: 'ARPPU',
-        dataIndex: 'address',
-        key: 'address',
-      },
-      {
-        title: 'DAU',
-        dataIndex: 'address',
-        key: 'address',
-      },
-      {
-        title: 'Revenue per transaction',
-        dataIndex: 'address',
-        key: 'address',
-      }
-    ];
+    // const columns = [
+    //   {
+    //     title: 'Date',
+    //     dataIndex: 'date',
+    //     key: 'date',
+    //     render: text => <a>{text}</a>,
+    //   },
+    //   {
+    //     title: 'Revenue per transaction',
+    //     dataIndex: 'revenue',
+    //     key: 'revenue',
+    //   },
+    //   {
+    //     title: 'Transactions',
+    //     dataIndex: 'transactions',
+    //     key: 'transactions',
+    //   },
+    //   {
+    //     title: 'Conversion rate',
+    //     dataIndex: 'conversion',
+    //     key: 'conversion',
+    //   },
+    //   {
+    //     title: 'ARPDAU',
+    //     dataIndex: 'arpdau',
+    //     key: 'arpdau',
+    //   },
+    // {
+    //   title: 'ARPPU',
+    //   dataIndex: 'arppu',
+    //   key: 'arppu',
+    // },
+    // {
+    //   title: 'DAU',
+    //   dataIndex: 'dau',
+    //   key: 'dau',
+    // }
+    // ];
 
     // const data = [
     //   {
     //     key: '1',
+<<<<<<< HEAD:client/src/component/Home/DemoGame/Dashboard/Monetization.js
     //     date: day,
     //     age: 32,
     //     address: 'New York No. 1 Lake Park',
@@ -181,6 +211,54 @@ export class Monetization extends Component {
     //     address: 'Sidney No. 1 Lake Park',
     //     tags: ['cool', 'teacher'],
     //   },
+=======
+    //     date: date[0],
+    //     revenue: "$" + revenue[0],
+    //     transactions: "$" + transactions[0],
+    //     conversion: conversionRate[0] + "%",
+    //     arpdau: "$" + ARPDAU[0]
+    //   },
+    //   {
+    //     key: '2',
+    //     date: date[1],
+    //     revenue: "$" + revenue[1],
+    //     transactions: "$" + transactions[1],
+    //     conversion: conversionRate[1] + "%",
+    //     arpdau: "$" + ARPDAU[1]
+    //   },
+    //   {
+    //     key: '3',
+    //     date: date[2],
+    //     revenue: "$" + revenue[2],
+    //     transactions: "$" + transactions[2],
+    //     conversion: conversionRate[2] + "%",
+    //     arpdau: "$" + ARPDAU[2]
+    //   },
+    //   {
+    //     key: '4',
+    //     date: date[3],
+    //     revenue: "$" + revenue[3],
+    //     transactions: "$" + transactions[3],
+    //     conversion: conversionRate[3] + "%",
+    //     arpdau: "$" + ARPDAU[3]
+    //   },
+    //   {
+    //     key: '5',
+    //     date: date[4],
+    //     revenue: "$" + revenue[4],
+    //     transactions: "$" + transactions[4],
+    //     conversion: conversionRate[4] + "%",
+    //     arpdau: "$" + ARPDAU[4]
+    //   },
+    //   {
+    //     key: '6',
+    //     date: "Total",
+    //     revenue: "$" + ( revenue[0] + revenue[1] + revenue[2] + revenue[3] + revenue[4] ),
+    //     transactions: "$" + ( transactions[0] + transactions[1] + transactions[2] + transactions[3] + transactions[4] ),
+    //     conversion: ( conversionRate[0] + conversionRate[1] + conversionRate[2] + conversionRate[3] + conversionRate[4] ).toFixed(2) + "%",
+    //     arpdau: "$" + ( ARPDAU[0] + ARPDAU[1] + ARPDAU[2] + ARPDAU[3] + ARPDAU[4] )
+    //   }
+>>>>>>> 35cde3def2774c93dbeba5d1ffe6e31838463984:client/src/component/Home/DemoGame/Dashboard/Monetization/Monetization.js
     // ];
 
     return (
@@ -194,23 +272,41 @@ export class Monetization extends Component {
                   this.state.submenu
                 }
               >
-                <Menu.Item key="Overview">Overview</Menu.Item>
-                <Menu.Item key="Engagement">Engagement</Menu.Item>
-                <Menu.Item key="Benchmarks">Benchmarks</Menu.Item>
-                <Menu.Item key="Monetization">Monetization</Menu.Item>
-                <Menu.Item key="Resources">Resources</Menu.Item>
-                <Menu.Item key="Progression">Progression</Menu.Item>
-                <Menu.Item key="Quality">Quality</Menu.Item>
+                <Menu.Item key="Overview">
+                  Overview
+                </Menu.Item>
+                <Menu.Item key="Engagement">
+                  Engagement
+                </Menu.Item>
+                <Menu.Item key="Benchmarks">
+                  Benchmarks
+                </Menu.Item>
+                <Menu.Item key="Monetization">
+                  Monetization
+                  <Link to={`${url}`} />
+                </Menu.Item>
+                <Menu.Item key="Resources">
+                  Resources
+                  <Link to={"/game/1782/dashboard/show/resources"} />
+                </Menu.Item>
+                <Menu.Item key="Progression">
+                  Progression
+                </Menu.Item>
+                <Menu.Item key="Quality">
+                  Quality
+                </Menu.Item>
               </SubMenu>
               <Menu.Item key="Summary">
                 Summary
+                <Link to={`${url}`} />
               </Menu.Item>
               <Menu.Item key="Purchase">
                 Purchase behaviour
+                <Link to={`${url}/behaviour`} />
               </Menu.Item>
-              <Icon type="appstore" theme="twoTone" style={{ fontSize: '18px', float: 'right', marginTop: 15, marginLeft: 20, marginRight: 20 }}/>
-              <Icon type="stock" style={{ fontSize: '18px', float: 'right', marginTop: 15 }}/>
-              <Icon type="lock" style={{ fontSize: '18px', float: 'right', marginTop: 15, marginRight: 20, marginLeft: 20 }}/>
+              <Icon type="appstore" theme="twoTone" style={{ fontSize: '18px', float: 'right', marginTop: 15, marginLeft: 20, marginRight: 20 }} />
+              <Icon type="stock" style={{ fontSize: '18px', float: 'right', marginTop: 15 }} />
+              <Icon type="lock" style={{ fontSize: '18px', float: 'right', marginTop: 15, marginRight: 20, marginLeft: 20 }} />
             </Menu>
             <Menu>
               <div className="demo">
@@ -236,7 +332,12 @@ export class Monetization extends Component {
         <div style={{ width: '1279.200px', height: '40px' }} />
 
         <div style={{ marginLeft: '72px', marginRight: '72px' }}>
-          <ul style={{ listStyle: 'none', paddingLeft: 0 }}>
+
+          <Switch>
+            <Route exact path={`${path}`} component={Summary} />
+            <Route path={`${url}/behaviour`} component={Monetization_behaviour} />
+          </Switch>
+          {/* <ul style={{ listStyle: 'none', paddingLeft: 0 }}>
             <Row>
               <Col span={12}>
                 <li>
@@ -524,11 +625,11 @@ export class Monetization extends Component {
                 Export
               </Button>
             </div>
-          </div>
+          </div> */}
         </div>
       </React.Fragment>
     )
   }
 }
 
-export default Monetization;
+export default withRouter(Monetization);

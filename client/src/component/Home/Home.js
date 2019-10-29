@@ -14,6 +14,7 @@ import Navbar from '../Navbar/Navbar';
 
 const { Search } = Input;
 
+// data list game
 const data = [
   'Demo Game',
 ];
@@ -35,6 +36,7 @@ class Home extends React.Component {
   };
 
   render() {
+
     // menu dropdown header list
     const menuHeader = (
       <Menu onClick={this.handleMenuClick}>
@@ -71,10 +73,34 @@ class Home extends React.Component {
           <div className="PageHeader">
             <PageHeader title="Games"
               style={{ width: 710, paddingLeft: 0, paddingRight: 0, float: 'left' }} />
-            <Search placeholder="Search App or Developer" onSearch={value => console.log(value)} style={{ width: 330, paddingTop: 24, paddingBottom: 24, float: 'right' }} enterButton />
-            <Button type='link' style={{ float: 'right' }}>< h4><Icon type="plus-circle" theme="twoTone" /> Member</h4></Button>
-            <Button type='link' style={{ float: 'right' }}>< h4><Icon type="plus-circle" theme="twoTone" /> Developer</h4></Button>
-            <Button onClick={this.handleClick.bind(this)} type='link' style={{ float: 'right' }}>< h4><Icon type="plus-circle" theme="twoTone" /> App</h4></Button>
+            <Search
+              placeholder="Search App or Developer"
+              onSearch={value => console.log(value)}
+              style={{ width: 330, paddingTop: 24, paddingBottom: 24, float: 'right' }}
+              enterButton
+            />
+            <Button
+              type='link'
+              style={{ float: 'right' }}>
+              < h4>
+                <Icon type="plus-circle" theme="twoTone" /> Member
+              </h4>
+            </Button>
+            <Button
+              type='link'
+              style={{ float: 'right' }}>
+              <h4>
+                <Icon type="plus-circle" theme="twoTone" /> Developer
+              </h4>
+            </Button>
+            <Button
+              onClick={this.handleClick.bind(this)}
+              type='link'
+              style={{ float: 'right' }}>
+              < h4>
+                <Icon type="plus-circle" theme="twoTone" /> App
+              </h4>
+            </Button>
           </div>
           <div className="Container">
             <List
@@ -82,7 +108,7 @@ class Home extends React.Component {
               header={
                 <div>
                   <div style={{ paddingRight: '12px', width: '155px', display: 'inline-block' }}>
-                      <h2 style={{ margin: '0px' }}>GameAnalytics</h2>
+                    <h2 style={{ margin: '0px' }}>GameAnalytics</h2>
                   </div>
                   <Dropdown
                     overlay={menuHeader}
@@ -112,12 +138,24 @@ class Home extends React.Component {
                       <Avatar shape="square" size={50} icon="user" />
                     </div>
                     <div style={{ padding: '0px 0px 0px 12px', display: 'inline-block' }}>
-                      <Button type="link" ><Link to="/game/1782/dashboard/show/monetization"><b>{item}</b></Link></Button>
+                      <Button type="link" ><Link to="/game/1782/dashboard"><b>{item}</b></Link></Button>
                     </div>
                   </div>
-                  <a href='/game/1782/dashboard' style={{ width: '161px', height: '50px', borderLeft: '1px solid #f3f2f2', textAlign: 'center' }}><b>DAU</b></a>
-                  <a href='/game/1782/dashboard' style={{ width: '161px', height: '50px', borderLeft: '1px solid #f3f2f2', textAlign: 'center' }}><b>New users</b></a>
-                  <a href='/game/1782/dashboard' style={{ width: '161px', height: '50px', borderLeft: '1px solid #f3f2f2', textAlign: 'center' }}><b>ARPDAU</b></a>
+                  <a 
+                    href='/game/1782/dashboard' 
+                    style={{ width: '161px', height: '50px', borderLeft: '1px solid #f3f2f2', textAlign: 'center' }}>
+                    <b>DAU</b>
+                  </a>
+                  <a 
+                    href='/game/1782/dashboard' 
+                    style={{ width: '161px', height: '50px', borderLeft: '1px solid #f3f2f2', textAlign: 'center' }}>
+                    <b>New users</b>
+                  </a>
+                  <a 
+                    href='/game/1782/dashboard' 
+                    style={{ width: '161px', height: '50px', borderLeft: '1px solid #f3f2f2', textAlign: 'center' }}>
+                    <b>ARPDAU</b>
+                  </a>
                   <Dropdown
                     overlay={menuList}
                   >

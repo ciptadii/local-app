@@ -1,9 +1,17 @@
 import React from 'react';
+<<<<<<< HEAD
 import {
   BrowserRouter,
   Route,
   Link,
   Switch
+=======
+import { 
+  Route, 
+  Link, 
+  Switch,
+  withRouter
+>>>>>>> 35cde3def2774c93dbeba5d1ffe6e31838463984
 } from "react-router-dom";
 import {
   Layout,
@@ -15,9 +23,8 @@ import {
   Input
 } from 'antd';
 
-import './DemoGame';
-import Monetization from './Dashboard/Monetization';
-import Resources from './Dashboard/Resources';
+import Monetization from '../DemoGame/Dashboard/Monetization/Monetization';
+import Resources from './Dashboard/Resources/Resources';
 
 const { Content, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -46,6 +53,8 @@ class DemoGame extends React.Component {
   };
 
   render() {
+    const { path, url } = this.props.match;
+
     // menu dropdown header
     const menu = (
       <Menu onClick={this.handleMenuClick}>
@@ -72,7 +81,6 @@ class DemoGame extends React.Component {
     );
 
     return (
-      <BrowserRouter>
         <Layout>
           <Sider
             collapsible
@@ -127,11 +135,11 @@ class DemoGame extends React.Component {
                 <Menu.Item key="benchmarks"><Icon type="deployment-unit" />Benchmarks</Menu.Item>
                 <Menu.Item key="monetization"><Icon type="deployment-unit" />
                   Monetization
-                  <Link to='/game/1782/dashboard/show/monetization' />
+                  <Link to={`${url}/show/monetization`} />
                 </Menu.Item>
                 <Menu.Item key="resources"><Icon type="deployment-unit" />
                   Resources
-                  <Link to='/game/1782/dashboard/show/resources' />
+                  <Link to={`${url}/show/resources`} />
                 </Menu.Item>
                 <Menu.Item key="progression"><Icon type="deployment-unit" />Progression</Menu.Item>
                 <Menu.Item key="quality"><Icon type="deployment-unit" />Quality</Menu.Item>
@@ -152,23 +160,23 @@ class DemoGame extends React.Component {
           </Sider>
 
           <Layout style={{ marginLeft: '200px' }}>
-            {/* <main style={{ width: '1519.200px', marginLeft: '200px', zIndex: 50 }}> */}
             <Content>
               <Switch>
-                <Route exact path="/game/:id/dashboard" component={DemoGame} />
-                <Route path="/game/:id/dashboard/show/monetization" component={Monetization} />
-                <Route path="/game/:id/dashboard/show/resources" component={Resources} />
+                <Route path={`${path}/show/monetization`} component={Monetization} />
+                <Route path={`${path}/show/resources`} component={Resources} />
               </Switch>
             </Content>
-            {/* </main> */}
           </Layout>
         </Layout>
+<<<<<<< HEAD
         <Switch>
           <Route exact path="/" component={DemoGame} />
         </Switch>
       </BrowserRouter>
+=======
+>>>>>>> 35cde3def2774c93dbeba5d1ffe6e31838463984
     );
   }
 }
 
-export default DemoGame;
+export default withRouter(DemoGame);
