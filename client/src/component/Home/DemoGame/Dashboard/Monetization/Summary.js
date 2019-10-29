@@ -49,7 +49,7 @@ class Summary extends Component {
         title: 'Date',
         dataIndex: 'date',
         key: 'date',
-        render: text => <a>{text}</a>,
+        render: text => <a href="fake">{text}</a>,
       },
       {
         title: 'Revenue per transaction',
@@ -140,9 +140,16 @@ class Summary extends Component {
             <Row>
               <Col span={12}>
                 <li>
-                  <Card title="Revenue" style={{ width: '564px', margin: 'auto' }}>
+                  {/* <Card size="small" title="Revenue" style={{ width: '564px', margin: 'auto' }}> */}
+                  <div style={{ background: '#FFF', border: '1px solid #ddd', width: '564px' }}>
+                    <div style={{ margin: '0px 14px', borderBottom: '1px solid #f3f2f2' }}>
+                      <div style={{ height: '55px' }}>
+                        header test
+                      </div>
+                    </div>
                     <Spin spinning={this.state.isLoading}>
                       <Line
+                        style={{ width: '554px', margin: 'auto' }}
                         data={{
                           labels: chartData.thisWeek,
                           datasets: [
@@ -173,12 +180,13 @@ class Summary extends Component {
                         }}
                       />
                     </Spin>
-                  </Card>
+                    </div>
+                  {/* </Card> */}
                 </li>
               </Col>
               <Col span={12}>
                 <li>
-                  <Card title="Transactions" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="Transactions" style={{ width: '564px', margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -215,11 +223,13 @@ class Summary extends Component {
                 </li>
               </Col>
             </Row>
+
             <br />
+            
             <Row>
               <Col span={12}>
                 <li>
-                  <Card title="Conversion rate" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="Conversion rate" style={{ width: '564px', margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -257,7 +267,7 @@ class Summary extends Component {
               </Col>
               <Col span={12}>
                 <li>
-                  <Card title="ARPDAU" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="ARPDAU" style={{ width: '564px', margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Bar
                         data={{
@@ -293,11 +303,14 @@ class Summary extends Component {
                   </Card>
                 </li>
               </Col>
-            </Row> <br />
+            </Row> 
+            
+            <br />
+            
             <Row>
               <Col span={12}>
                 <li>
-                  <Card title="ARPPU" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="ARPPU" style={{ width: '564px', margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -335,7 +348,7 @@ class Summary extends Component {
               </Col>
               <Col span={12}>
                 <li>
-                  <Card title="Paying user" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="Paying user" style={{ width: '564px', margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -375,7 +388,7 @@ class Summary extends Component {
             <Row>
               <Col span={24}>
                 <li>
-                  <Card title="Revenue per item" style={{ width: '1149.600px', margin: 'auto' }} >
+                  <Card size="small" title="Revenue per item" style={{ width: '1149.600px', margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -412,7 +425,10 @@ class Summary extends Component {
                 </li>
               </Col>
             </Row>
-          </ul> <br />
+          </ul>
+          
+          <br />
+          
           <div style={{ paddingBottom: '30px' }}>
             <Spin spinning={this.state.isLoading}>
               <Table columns={columns} dataSource={data} style={{ width: '1149.600px', margin: 'auto', background: 'white' }} />

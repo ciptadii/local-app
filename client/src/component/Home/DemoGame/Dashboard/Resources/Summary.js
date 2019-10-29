@@ -37,7 +37,7 @@ export class Summary extends Component {
             <Row>
               <Col span={12}>
                 <li>
-                  <Card title="Total sink by currency" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="Total sink by currency" style={{ width: '564px', margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -75,7 +75,7 @@ export class Summary extends Component {
               </Col>
               <Col span={12}>
                 <li>
-                  <Card title="Total source by currency" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="Total source by currency" style={{ width: '564px', margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -111,11 +111,14 @@ export class Summary extends Component {
                   </Card>
                 </li>
               </Col>
-            </Row> <br />
+            </Row> 
+            
+            <br />
+
             <Row>
               <Col span={12}>
                 <li>
-                  <Card title="Number of transaction by currency sink" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="Number of transaction by currency sink" style={{ width: '564px', margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -153,7 +156,7 @@ export class Summary extends Component {
               </Col>
               <Col span={12}>
                 <li>
-                  <Card title="Number of transactions by currency source" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="Number of transactions by currency source" style={{ width: '564px', margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -189,11 +192,14 @@ export class Summary extends Component {
                   </Card>
                 </li>
               </Col>
-            </Row> <br />
+            </Row> 
+            
+            <br />
+            
             <Row>
               <Col span={24}>
                 <li>
-                  <Card title="Total flow by currency" style={{ width: '1149.600px', margin: 'auto' }} >
+                  <Card size="small" title="Total flow by currency" style={{ width: '1149.600px', margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
