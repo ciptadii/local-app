@@ -1,18 +1,18 @@
 import React from 'react';
-import { 
-  BrowserRouter, 
-  Route, 
-  Link, 
-  Switch 
+import {
+  BrowserRouter,
+  Route,
+  Link,
+  Switch
 } from "react-router-dom";
-import { 
-  Layout, 
-  Menu, 
-  Icon, 
-  Avatar, 
-  Dropdown, 
-  Button, 
-  Input 
+import {
+  Layout,
+  Menu,
+  Icon,
+  Avatar,
+  Dropdown,
+  Button,
+  Input
 } from 'antd';
 
 import './DemoGame';
@@ -64,7 +64,7 @@ class DemoGame extends React.Component {
             <Avatar
               src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-joystick-game-graphic-design-element-vector-illustration-png-image_3698982.jpg"
               style={{ width: '18px', height: '18px' }}
-            /> 
+            />
             <span> Demo game</span>
           </Link>
         </Menu.Item>
@@ -87,7 +87,7 @@ class DemoGame extends React.Component {
             }}>
 
             <Button type='link' style={{ width: '200px', height: '50px', padding: 0 }}>
-              <Dropdown 
+              <Dropdown
                 overlay={menu} trigger={['click']}
                 onVisibleChange={this.handleVisibleChange}
                 visible={this.state.visible}
@@ -163,6 +163,9 @@ class DemoGame extends React.Component {
             {/* </main> */}
           </Layout>
         </Layout>
+        <Switch>
+          <Route exact path="/" component={DemoGame} />
+        </Switch>
       </BrowserRouter>
     );
   }

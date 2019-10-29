@@ -91,6 +91,19 @@ export class Monetization extends Component {
   render() {
     const { chartData } = this.state;
 
+    const dataLoaded =  [];
+    if(chartData.thisWeek){
+      chartData.thisWeek.forEach( (item, key) => {
+        dataLoaded.push({
+          key,
+          date: item,
+          age: 32,
+          address: 'New York No. 1 Lake Park',
+          tags: ['nice', 'developer'],
+        });
+      }) 
+    }
+
     // Cascade
     function onChange(value) {
       console.log(value);
@@ -146,29 +159,29 @@ export class Monetization extends Component {
       }
     ];
 
-    const data = [
-      {
-        key: '1',
-        date: chartData.thisWeek,
-        age: 32,
-        address: 'New York No. 1 Lake Park',
-        tags: ['nice', 'developer'],
-      },
-      {
-        key: '2',
-        name: 'Jim Green',
-        age: 42,
-        address: 'London No. 1 Lake Park',
-        tags: ['loser'],
-      },
-      {
-        key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sidney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
-      },
-    ];
+    // const data = [
+    //   {
+    //     key: '1',
+    //     date: day,
+    //     age: 32,
+    //     address: 'New York No. 1 Lake Park',
+    //     tags: ['nice', 'developer'],
+    //   },
+    //   {
+    //     key: '2',
+    //     name: 'Jim Green',
+    //     age: 42,
+    //     address: 'London No. 1 Lake Park',
+    //     tags: ['loser'],
+    //   },
+    //   {
+    //     key: '3',
+    //     name: 'Joe Black',
+    //     age: 32,
+    //     address: 'Sidney No. 1 Lake Park',
+    //     tags: ['cool', 'teacher'],
+    //   },
+    // ];
 
     return (
       <React.Fragment>
@@ -501,9 +514,11 @@ export class Monetization extends Component {
             </Row>
           </ul> <br />
           <div style={{ paddingBottom: '30px' }}>
-            <Spin spinning={this.state.isLoading}>
-              <Table columns={columns} dataSource={data} style={{ width: '1149.600px', margin: 'auto', background: 'white' }} />
+            <Spin spinning={this.state.isLoading} > 
+                <Table columns={columns} dataSource={dataLoaded} style={{ width: '1149.600px', margin: 'auto', background: 'white' }} />
             </Spin>
+            
+    
             <div style={{ width: '101.21px', height: '40px', margin: 'auto', paddingTop:'6px', paddingBottom: '6px' }}>
               <Button type="primary" icon="download" size='large'>
                 Export
