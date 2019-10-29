@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { 
-  Route, 
-  Link, 
+import {
+  Route,
+  Link,
   Switch,
   withRouter
 } from "react-router-dom";
@@ -129,19 +129,18 @@ export class Monetization extends Component {
     //   })
     // }console.log(dataLoaded);
 
-
-    const dataLoaded =  [];
-    if(chartData.thisWeek){
-      chartData.thisWeek.forEach( (item, key) => {
-        dataLoaded.push({
-          key,
-          date: item,
-          age: 32,
-          address: 'New York No. 1 Lake Park',
-          tags: ['nice', 'developer'],
-        });
-      }) 
-    }
+    // const dataLoaded =  [];
+    // if(chartData.thisWeek){
+    //   chartData.thisWeek.forEach( (item, key) => {
+    //     dataLoaded.push({
+    //       key,
+    //       date: item,
+    //       age: 32,
+    //       address: 'New York No. 1 Lake Park',
+    //       tags: ['nice', 'developer'],
+    //     });
+    //   }) 
+    // }
 
     // Cascade
     function onChange(value) {
@@ -191,27 +190,6 @@ export class Monetization extends Component {
     // const data = [
     //   {
     //     key: '1',
-<<<<<<< HEAD:client/src/component/Home/DemoGame/Dashboard/Monetization.js
-    //     date: day,
-    //     age: 32,
-    //     address: 'New York No. 1 Lake Park',
-    //     tags: ['nice', 'developer'],
-    //   },
-    //   {
-    //     key: '2',
-    //     name: 'Jim Green',
-    //     age: 42,
-    //     address: 'London No. 1 Lake Park',
-    //     tags: ['loser'],
-    //   },
-    //   {
-    //     key: '3',
-    //     name: 'Joe Black',
-    //     age: 32,
-    //     address: 'Sidney No. 1 Lake Park',
-    //     tags: ['cool', 'teacher'],
-    //   },
-=======
     //     date: date[0],
     //     revenue: "$" + revenue[0],
     //     transactions: "$" + transactions[0],
@@ -258,14 +236,13 @@ export class Monetization extends Component {
     //     conversion: ( conversionRate[0] + conversionRate[1] + conversionRate[2] + conversionRate[3] + conversionRate[4] ).toFixed(2) + "%",
     //     arpdau: "$" + ( ARPDAU[0] + ARPDAU[1] + ARPDAU[2] + ARPDAU[3] + ARPDAU[4] )
     //   }
->>>>>>> 35cde3def2774c93dbeba5d1ffe6e31838463984:client/src/component/Home/DemoGame/Dashboard/Monetization/Monetization.js
     // ];
 
     return (
       <React.Fragment>
         <div>
-          <Header style={{ padding: 0, position: 'fixed', zIndex: 100, width: '1319.200px' }} >
-            <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" style={{ width: '1319.200px' }}>
+          <Header style={{ padding: 0, position: 'fixed', zIndex: 100, width: '85vw' }} >
+            <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" style={{ width: '85vw' }}>
               <SubMenu
                 key="sub1"
                 title={
@@ -310,7 +287,7 @@ export class Monetization extends Component {
             </Menu>
             <Menu>
               <div className="demo">
-                <div style={{ paddingLeft: '20px', paddingRight: '20px', clear: 'both', whiteSpace: 'nowrap', width: '1319.200px' }}>
+                <div style={{ paddingLeft: '20px', paddingRight: '20px', clear: 'both', whiteSpace: 'nowrap', width: '85vw' }}>
                   <div>
                     <RangePicker
                       defaultValue={[moment('2015/01/01', dateFormat), moment('2015/01/01', dateFormat)]}
@@ -326,10 +303,10 @@ export class Monetization extends Component {
               </div>
             </Menu>
           </Header>
-          <div style={{ width: '1279.200px', height: '90px' }} />
+          <div style={{ width: '85vw', height: '90px' }} />
         </div>
 
-        <div style={{ width: '1279.200px', height: '40px' }} />
+        <div style={{ width: '85vw', height: '40px' }} />
 
         <div style={{ marginLeft: '72px', marginRight: '72px' }}>
 

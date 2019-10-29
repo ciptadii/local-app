@@ -5,7 +5,8 @@ import {
   Col,
   Button,
   Spin,
-  Table
+  Table,
+  Icon
 } from 'antd';
 
 import { Line, Bar } from '../../../../../../node_modules/react-chartjs-2';
@@ -141,15 +142,16 @@ class Summary extends Component {
               <Col span={12}>
                 <li>
                   {/* <Card size="small" title="Revenue" style={{ width: '564px', margin: 'auto' }}> */}
-                  <div style={{ background: '#FFF', border: '1px solid #ddd', width: '564px' }}>
-                    <div style={{ margin: '0px 14px', borderBottom: '1px solid #f3f2f2' }}>
-                      <div style={{ height: '55px' }}>
-                        header test
+                  <div style={{ background: '#FFF', border: '1px solid #ddd' }}>
+                    <div style={{ height: '55px', margin: '0px 14px', borderBottom: '1px solid #f3f2f2' }}>
+                      <div style={{ width: '178.133px' }}>
+                        <div style={{ fontSize: '15px' }}><b>Revenue <Icon type="info-circle" theme="filled" style={{ color: '#dddbda' }}/></b></div>
+                        <div style={{ fontSize: '12px' }}>Revenue per transaction (SUM)</div>
                       </div>
                     </div>
                     <Spin spinning={this.state.isLoading}>
                       <Line
-                        style={{ width: '554px', margin: 'auto' }}
+                        style={{ margin: 'auto' }}
                         data={{
                           labels: chartData.thisWeek,
                           datasets: [
@@ -186,7 +188,7 @@ class Summary extends Component {
               </Col>
               <Col span={12}>
                 <li>
-                  <Card size="small" title="Transactions" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="Transactions" style={{ margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -229,7 +231,7 @@ class Summary extends Component {
             <Row>
               <Col span={12}>
                 <li>
-                  <Card size="small" title="Conversion rate" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="Conversion rate" style={{ margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -267,7 +269,7 @@ class Summary extends Component {
               </Col>
               <Col span={12}>
                 <li>
-                  <Card size="small" title="ARPDAU" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="ARPDAU" style={{ margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Bar
                         data={{
@@ -310,7 +312,7 @@ class Summary extends Component {
             <Row>
               <Col span={12}>
                 <li>
-                  <Card size="small" title="ARPPU" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="ARPPU" style={{ margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -348,7 +350,7 @@ class Summary extends Component {
               </Col>
               <Col span={12}>
                 <li>
-                  <Card size="small" title="Paying user" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="Paying user" style={{ margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -388,7 +390,7 @@ class Summary extends Component {
             <Row>
               <Col span={24}>
                 <li>
-                  <Card size="small" title="Revenue per item" style={{ width: '1149.600px', margin: 'auto' }} >
+                  <Card size="small" title="Revenue per item" style={{ margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -431,7 +433,7 @@ class Summary extends Component {
           
           <div style={{ paddingBottom: '30px' }}>
             <Spin spinning={this.state.isLoading}>
-              <Table columns={columns} dataSource={data} style={{ width: '1149.600px', margin: 'auto', background: 'white' }} />
+              <Table columns={columns} dataSource={data} style={{ margin: 'auto', background: 'white' }} />
             </Spin>
             <div style={{ width: '101.21px', height: '40px', margin: 'auto', paddingTop:'6px', paddingBottom: '6px' }}>
               <Button type="primary" icon="download" size='large'>

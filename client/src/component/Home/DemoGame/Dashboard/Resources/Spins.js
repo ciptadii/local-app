@@ -35,7 +35,7 @@ export class Spins extends Component {
           <Row>
             <Col span={24}>
               <li>
-                <Card size="small" title="Total flow by item type" style={{ width: '1149.600px', margin: 'auto' }} >
+                <Card size="small" title="Total flow by item type" style={{ margin: 'auto' }} >
                   <Spin spinning={this.state.isLoading}>
                     <Line
                       data={{
@@ -78,7 +78,7 @@ export class Spins extends Component {
           <Row>
             <Col span={12}>
               <li>
-                <Card size="small" title="Sink by item type" style={{ width: '564px', margin: 'auto' }}>
+                <Card size="small" title="Sink by item type" style={{ margin: 'auto' }}>
                   <Spin spinning={this.state.isLoading}>
                     <Line
                       data={{
@@ -116,7 +116,7 @@ export class Spins extends Component {
             </Col>
             <Col span={12}>
               <li>
-                <Card size="small" title="Source by item type" style={{ width: '564px', margin: 'auto' }} >
+                <Card size="small" title="Source by item type" style={{ margin: 'auto' }} >
                   <Spin spinning={this.state.isLoading}>
                     <Line
                       data={{
@@ -159,7 +159,7 @@ export class Spins extends Component {
           <Row>
             <Col span={12}>
               <li>
-                <Card size="small" title="Sink by item id" style={{ width: '564px', margin: 'auto' }} >
+                <Card size="small" title="Sink by item id" style={{ margin: 'auto' }} >
                   <Spin spinning={this.state.isLoading}>
                     <Line
                       data={{
@@ -197,7 +197,7 @@ export class Spins extends Component {
             </Col>
             <Col span={12}>
               <li>
-                <Card size="small" title="Source by item id" style={{ width: '564px', margin: 'auto' }} >
+                <Card size="small" title="Source by item id" style={{ margin: 'auto' }} >
                   <Spin spinning={this.state.isLoading}>
                     <Bar
                       data={{
@@ -240,7 +240,7 @@ export class Spins extends Component {
           <Row>
             <Col span={12}>
               <li>
-                <Card size="small" title="Sink transactions" style={{ width: '564px', margin: 'auto' }} >
+                <Card size="small" title="Sink transactions" style={{ margin: 'auto' }} >
                   <Spin spinning={this.state.isLoading}>
                     <Line
                       data={{
@@ -278,7 +278,7 @@ export class Spins extends Component {
             </Col>
             <Col span={12}>
               <li>
-                <Card size="small" title="Source transactions" style={{ width: '564px', margin: 'auto' }} >
+                <Card size="small" title="Source transactions" style={{ margin: 'auto' }} >
                   <Spin spinning={this.state.isLoading}>
                     <Line
                       data={{

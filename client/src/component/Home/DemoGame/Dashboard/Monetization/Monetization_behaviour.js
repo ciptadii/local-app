@@ -35,7 +35,7 @@ class Monetization_behaviour extends Component {
             <Row>
               <Col span={12}>
                 <li>
-                  <Card size="small" title="Paying users by item type" style={{ width: '564px', margin: 'auto' }}>
+                  <Card size="small" title="Paying users by item type" style={{ margin: 'auto' }}>
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -73,7 +73,7 @@ class Monetization_behaviour extends Component {
               </Col>
               <Col span={12}>
                 <li>
-                  <Card size="small" title="Paying users by cart type" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="Paying users by cart type" style={{ margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -116,7 +116,7 @@ class Monetization_behaviour extends Component {
             <Row>
               <Col span={12}>
                 <li>
-                  <Card size="small" title="Paying users by item id" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="Paying users by item id" style={{ margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -154,7 +154,7 @@ class Monetization_behaviour extends Component {
               </Col>
               <Col span={12}>
                 <li>
-                  <Card size="small" title="Revenue by cart type" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="Revenue by cart type" style={{ margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Bar
                         data={{
@@ -197,7 +197,7 @@ class Monetization_behaviour extends Component {
             <Row>
               <Col span={12}>
                 <li>
-                  <Card size="small" title="Revenue by item type" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="Revenue by item type" style={{ margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -235,7 +235,7 @@ class Monetization_behaviour extends Component {
               </Col>
               <Col span={12}>
                 <li>
-                  <Card size="small" title="Revenue by item id" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="Revenue by item id" style={{ margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -278,7 +278,7 @@ class Monetization_behaviour extends Component {
             <Row>
               <Col span={12}>
                 <li>
-                  <Card size="small" title="ARPPU by item type" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="ARPPU by item type" style={{ margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{
@@ -316,7 +316,7 @@ class Monetization_behaviour extends Component {
               </Col>
               <Col span={12}>
                 <li>
-                  <Card size="small" title="ARPPU by item id" style={{ width: '564px', margin: 'auto' }} >
+                  <Card size="small" title="ARPPU by item id" style={{ margin: 'auto' }} >
                     <Spin spinning={this.state.isLoading}>
                       <Line
                         data={{

@@ -1,17 +1,9 @@
 import React from 'react';
-<<<<<<< HEAD
-import {
-  BrowserRouter,
-  Route,
-  Link,
-  Switch
-=======
 import { 
   Route, 
   Link, 
   Switch,
   withRouter
->>>>>>> 35cde3def2774c93dbeba5d1ffe6e31838463984
 } from "react-router-dom";
 import {
   Layout,
@@ -159,7 +151,7 @@ class DemoGame extends React.Component {
             </Menu>
           </Sider>
 
-          <Layout style={{ marginLeft: '200px' }}>
+          <Layout style={{ marginLeft: '200px', width: '85vw' }}>
             <Content>
               <Switch>
                 <Route path={`${path}/show/monetization`} component={Monetization} />
@@ -168,13 +160,6 @@ class DemoGame extends React.Component {
             </Content>
           </Layout>
         </Layout>
-<<<<<<< HEAD
-        <Switch>
-          <Route exact path="/" component={DemoGame} />
-        </Switch>
-      </BrowserRouter>
-=======
->>>>>>> 35cde3def2774c93dbeba5d1ffe6e31838463984
     );
   }
 }
