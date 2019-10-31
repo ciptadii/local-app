@@ -241,8 +241,8 @@ export class Monetization extends Component {
     return (
       <React.Fragment>
         <div>
-          <Header style={{ padding: 0, position: 'fixed', zIndex: 100, width: '85vw' }} >
-            <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" style={{ width: '85vw' }}>
+          <Header style={{ padding: 0, position: 'fixed', zIndex: 100, width: '87%' }} >
+            <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
               <SubMenu
                 key="sub1"
                 title={
@@ -287,7 +287,7 @@ export class Monetization extends Component {
             </Menu>
             <Menu>
               <div className="demo">
-                <div style={{ paddingLeft: '20px', paddingRight: '20px', clear: 'both', whiteSpace: 'nowrap', width: '85vw' }}>
+                <div style={{ paddingLeft: '20px', paddingRight: '20px', clear: 'both', whiteSpace: 'nowrap', width: '100%' }}>
                   <div>
                     <RangePicker
                       defaultValue={[moment('2015/01/01', dateFormat), moment('2015/01/01', dateFormat)]}
@@ -303,10 +303,10 @@ export class Monetization extends Component {
               </div>
             </Menu>
           </Header>
-          <div style={{ width: '85vw', height: '90px' }} />
+          <div style={{ width: '100%', height: '90px' }} />
         </div>
 
-        <div style={{ width: '85vw', height: '40px' }} />
+        <div style={{ width: '100%', height: '40px' }} />
 
         <div style={{ marginLeft: '72px', marginRight: '72px' }}>
 

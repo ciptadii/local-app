@@ -151,7 +151,7 @@ class DemoGame extends React.Component {
             </Menu>
           </Sider>
 
-          <Layout style={{ marginLeft: '200px', width: '85vw' }}>
+          <Layout style={{ marginLeft: '200px' }}>
             <Content>
               <Switch>
                 <Route path={`${path}/show/monetization`} component={Monetization} />

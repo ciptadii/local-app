@@ -128,44 +128,53 @@ class Summary extends Component {
       {
         key: '6',
         date: "Total",
-        revenue: "$" + (revenue[0] + revenue[1] + revenue[2] + revenue[3] + revenue[4]),
-        transactions: "$" + (transactions[0] + transactions[1] + transactions[2] + transactions[3] + transactions[4]),
+        revenue: "$" + (revenue[0] + revenue[1] + revenue[2] + revenue[3] + revenue[4]).toFixed(2),
+        transactions: "$" + (transactions[0] + transactions[1] + transactions[2] + transactions[3] + transactions[4]).toFixed(2),
         conversion: (conversionRate[0] + conversionRate[1] + conversionRate[2] + conversionRate[3] + conversionRate[4]).toFixed(2) + "%",
-        arpdau: "$" + (ARPDAU[0] + ARPDAU[1] + ARPDAU[2] + ARPDAU[3] + ARPDAU[4])
+        arpdau: "$" + (ARPDAU[0] + ARPDAU[1] + ARPDAU[2] + ARPDAU[3] + ARPDAU[4]).toFixed(2)
       }
     ];
 
     return (
       <React.Fragment>
         {/* <ul style={{ listStyle: 'none', paddingLeft: 0 }}> */}
-        <Row gutter={[16, 16]}>
-          <Col span={12}>
+        <Row gutter={24}>
+          <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             {/* <li> */}
             {/* <Card size="small" title="Revenue" style={{ width: '564px', margin: 'auto' }}> */}
             <div style={{ background: '#FFF', border: '1px solid #ddd', borderRadius: '5px', position: 'relative' }}>
-              <div style={{ minHeight: '55px', margin: '0px 14px', borderBottom: '1px solid #f3f2f2', alignItems: 'center', display: 'flex', justifyContent: 'space-between' }}>
-                <div style={{ width: '178.133px', height: '38px', alignItems: 'flex-start', display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ fontSize: '15px' }}><b>Revenue <Icon type="info-circle" theme="filled" style={{ color: '#dddbda' }} /></b></div>
-                  <div style={{ fontSize: '12px' }}>Revenue per transaction (SUM)</div>
+              <div style={{ alignItems: 'center', borderBottom: '1px solid #f3f2f2', display: 'flex', justifyContent: 'space-between', minHeight: '55px', margin: '0px 14px' }}>
+                <div style={{ alignItems: 'center', display: 'flex' }}>
+                  <div style={{ alignItems: 'flex-start', display: 'flex', flexDirection: 'column', height: '38px', justifyContent: 'space-between' }}>
+                    <div style={{ color: '#2b2826', display: 'flex', fontSize: '15px', fontWeight: 500 }}>
+                      Revenue
+                      <div>
+                        <Icon type="info-circle" theme="filled" style={{ color: '#dddbda', cursor: 'pointer', marginLeft: '8px' }} />
+                      </div>
+                    </div>
+                    <div style={{ color: '#969492', fontSize: '12px', lineHeight: '16px' }}>Revenue per transaction (SUM)</div>
+                  </div>
                 </div>
                 <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
-                  <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
+                  <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
                     <div>
                       <div style={{ display: 'flex' }}>
                         <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> Sum </span></div>
                         <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> Mean </span></div>
                         <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> Count </span></div>
                       </div>
-                      <div>
-                        <span> $sum </span>
+                      <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
+                        <span className='total'> ${(revenue[0] + revenue[1] + revenue[2] + revenue[3] + revenue[4]).toFixed(2)} </span>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div style={{ borderRadius: '3px', cursor: 'pointer', fontSize: '14px', padding: '2px', position: 'absolute', right: '2px', top: '2px' }}>
+                  <Icon type="arrows-alt" />
+                </div>
               </div>
               <Spin spinning={this.state.isLoading}>
                 <Line
-                  style={{ margin: 'auto' }}
                   data={{
                     labels: chartData.thisWeek,
                     datasets: [
@@ -206,9 +215,40 @@ class Summary extends Component {
             {/* </Card> */}
             {/* </li> */}
           </Col>
-          <Col span={12}>
+          <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             {/* <li> */}
-            <Card size="small" title="Transactions" style={{ margin: 'auto' }} >
+            {/* <Card size="small" title="Transactions" style={{ margin: 'auto' }} > */}
+            <div style={{ background: '#FFF', border: '1px solid #ddd', borderRadius: '5px', position: 'relative' }}>
+              <div style={{ alignItems: 'center', borderBottom: '1px solid #f3f2f2', display: 'flex', justifyContent: 'space-between', minHeight: '55px', margin: '0px 14px' }}>
+                <div style={{ alignItems: 'center', display: 'flex' }}>
+                  <div style={{ alignItems: 'flex-start', display: 'flex', flexDirection: 'column', height: '38px', justifyContent: 'space-between' }}>
+                    <div style={{ color: '#2b2826', display: 'flex', fontSize: '15px', fontWeight: 500 }}>
+                      Transactions
+                      <div>
+                        <Icon type="info-circle" theme="filled" style={{ color: '#dddbda', cursor: 'pointer', marginLeft: '8px' }} />
+                      </div>
+                    </div>
+                    <div style={{ color: '#969492', fontSize: '12px', lineHeight: '16px' }}>Revenue per transaction (COUNT)</div>
+                  </div>
+                </div>
+                <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
+                  <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
+                    <div>
+                      <div style={{ display: 'flex' }}>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                      </div>
+                      <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
+                        <span className='total'> ${(transactions[0] + transactions[1] + transactions[2] + transactions[3] + transactions[4]).toFixed(2)} </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ borderRadius: '3px', cursor: 'pointer', fontSize: '14px', padding: '2px', position: 'absolute', right: '2px', top: '2px' }}>
+                  <Icon type="arrows-alt" />
+                </div>
+              </div>
               <Spin spinning={this.state.isLoading}>
                 <Line
                   data={{
@@ -247,15 +287,16 @@ class Summary extends Component {
                   }}
                 />
               </Spin>
-            </Card>
+            </div>
+            {/* </Card> */}
             {/* </li> */}
           </Col>
         </Row>
 
         <br />
 
-        <Row>
-          <Col span={12}>
+        <Row gutter={24}>
+          <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             {/* <li> */}
             <Card size="small" title="Conversion rate" style={{ margin: 'auto' }} >
               <Spin spinning={this.state.isLoading}>
@@ -299,7 +340,7 @@ class Summary extends Component {
             </Card>
             {/* </li> */}
           </Col>
-          <Col span={12}>
+          <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             {/* <li> */}
             <Card size="small" title="ARPDAU" style={{ margin: 'auto' }} >
               <Spin spinning={this.state.isLoading}>
