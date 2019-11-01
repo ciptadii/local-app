@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {
-  Card,
   Row,
   Col,
   Button,
   Spin,
   Table,
-  Icon
+  Icon,
+  Popover
 } from 'antd';
 
 import { Line, Bar } from '../../../../../../node_modules/react-chartjs-2';
@@ -43,6 +43,31 @@ class Summary extends Component {
     const transactions = chartData.transactions;
     const conversionRate = chartData.conversionRate;
     const ARPDAU = chartData.ARPDAU;
+
+    // Data Popover
+    const PopoverTitle = <span style={{ fontSize: '10px', color: '#AAA' }}>METRIC DEFINITION</span>;
+    const PopoverContent =
+      [
+        <div style={{ fontSize: '12px', color: '#262626' }}>
+          <p>
+            <b>SUM:</b> Total Revenue<br/>
+            <b>MEAN:</b> Avg. revenue per transaction.<br/>
+            <b>COUNT:</b> Total Transaction
+          </p>
+        </div>,
+        <div style={{ fontSize: '12px', color: '#262626' }}>
+          <p>The percent of your users who<br/>
+            made a purchase on that day</p>
+        </div>,
+        <div style={{ fontSize: '12px', color: '#262626' }}>
+          <p>Average revenue per daily<br/>
+          active user</p>
+        </div>,
+        <div style={{ fontSize: '12px', color: '#262626' }}>
+          <p>Average revenue per paying<br/>
+            user</p>
+        </div>
+      ];
 
     // Table
     const columns = [
@@ -135,13 +160,13 @@ class Summary extends Component {
       }
     ];
 
+
     return (
       <React.Fragment>
         {/* <ul style={{ listStyle: 'none', paddingLeft: 0 }}> */}
         <Row gutter={24}>
           <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             {/* <li> */}
-            {/* <Card size="small" title="Revenue" style={{ width: '564px', margin: 'auto' }}> */}
             <div style={{ background: '#FFF', border: '1px solid #ddd', borderRadius: '5px', position: 'relative' }}>
               <div style={{ alignItems: 'center', borderBottom: '1px solid #f3f2f2', display: 'flex', justifyContent: 'space-between', minHeight: '55px', margin: '0px 14px' }}>
                 <div style={{ alignItems: 'center', display: 'flex' }}>
@@ -149,7 +174,9 @@ class Summary extends Component {
                     <div style={{ color: '#2b2826', display: 'flex', fontSize: '15px', fontWeight: 500 }}>
                       Revenue
                       <div>
-                        <Icon type="info-circle" theme="filled" style={{ color: '#dddbda', cursor: 'pointer', marginLeft: '8px' }} />
+                        <Popover placement="rightTop" title={PopoverTitle} content={PopoverContent[0]} trigger="click">
+                          <Icon type="info-circle" theme="filled" style={{ color: '#dddbda', cursor: 'pointer', marginLeft: '8px' }} />
+                        </Popover>
                       </div>
                     </div>
                     <div style={{ color: '#969492', fontSize: '12px', lineHeight: '16px' }}>Revenue per transaction (SUM)</div>
@@ -212,12 +239,10 @@ class Summary extends Component {
                 />
               </Spin>
             </div>
-            {/* </Card> */}
             {/* </li> */}
           </Col>
           <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             {/* <li> */}
-            {/* <Card size="small" title="Transactions" style={{ margin: 'auto' }} > */}
             <div style={{ background: '#FFF', border: '1px solid #ddd', borderRadius: '5px', position: 'relative' }}>
               <div style={{ alignItems: 'center', borderBottom: '1px solid #f3f2f2', display: 'flex', justifyContent: 'space-between', minHeight: '55px', margin: '0px 14px' }}>
                 <div style={{ alignItems: 'center', display: 'flex' }}>
@@ -225,10 +250,12 @@ class Summary extends Component {
                     <div style={{ color: '#2b2826', display: 'flex', fontSize: '15px', fontWeight: 500 }}>
                       Transactions
                       <div>
-                        <Icon type="info-circle" theme="filled" style={{ color: '#dddbda', cursor: 'pointer', marginLeft: '8px' }} />
+                        <Popover placement="rightTop" title={PopoverTitle} content={PopoverContent[0]} trigger="click">
+                          <Icon type="info-circle" theme="filled" style={{ color: '#dddbda', cursor: 'pointer', marginLeft: '8px' }} />
+                        </Popover>
                       </div>
                     </div>
-                    <div style={{ color: '#969492', fontSize: '12px', lineHeight: '16px' }}>Revenue per transaction (COUNT)</div>
+                    <div style={{ color: '#969492', fontSize: '12px', lineHeight: '16px' }}>Transaction (COUNT)</div>
                   </div>
                 </div>
                 <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
@@ -288,7 +315,6 @@ class Summary extends Component {
                 />
               </Spin>
             </div>
-            {/* </Card> */}
             {/* </li> */}
           </Col>
         </Row>
@@ -298,7 +324,39 @@ class Summary extends Component {
         <Row gutter={24}>
           <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             {/* <li> */}
-            <Card size="small" title="Conversion rate" style={{ margin: 'auto' }} >
+            <div style={{ background: '#FFF', border: '1px solid #ddd', borderRadius: '5px', position: 'relative' }}>
+              <div style={{ alignItems: 'center', borderBottom: '1px solid #f3f2f2', display: 'flex', justifyContent: 'space-between', minHeight: '55px', margin: '0px 14px' }}>
+                <div style={{ alignItems: 'center', display: 'flex' }}>
+                  <div style={{ alignItems: 'flex-start', display: 'flex', flexDirection: 'column', height: '38px', justifyContent: 'space-between' }}>
+                    <div style={{ color: '#2b2826', display: 'flex', fontSize: '15px', fontWeight: 500 }}>
+                      Conversion rate
+                      <div>
+                        <Popover placement="rightTop" title={PopoverTitle} content={PopoverContent[1]} trigger="click">
+                          <Icon type="info-circle" theme="filled" style={{ color: '#dddbda', cursor: 'pointer', marginLeft: '8px' }} />
+                        </Popover>
+                      </div>
+                    </div>
+                    <div style={{ color: '#969492', fontSize: '12px', lineHeight: '16px' }}>Conversion rate (MEAN)</div>
+                  </div>
+                </div>
+                <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
+                  <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
+                    <div>
+                      <div style={{ display: 'flex' }}>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                      </div>
+                      <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
+                        <span className='total'> {(conversionRate[0] + conversionRate[1] + conversionRate[2] + conversionRate[3] + conversionRate[4]).toFixed(2)}% </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ borderRadius: '3px', cursor: 'pointer', fontSize: '14px', padding: '2px', position: 'absolute', right: '2px', top: '2px' }}>
+                  <Icon type="arrows-alt" />
+                </div>
+              </div>
               <Spin spinning={this.state.isLoading}>
                 <Line
                   data={{
@@ -337,12 +395,44 @@ class Summary extends Component {
                   }}
                 />
               </Spin>
-            </Card>
+            </div>
             {/* </li> */}
           </Col>
           <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             {/* <li> */}
-            <Card size="small" title="ARPDAU" style={{ margin: 'auto' }} >
+            <div style={{ background: '#FFF', border: '1px solid #ddd', borderRadius: '5px', position: 'relative' }}>
+              <div style={{ alignItems: 'center', borderBottom: '1px solid #f3f2f2', display: 'flex', justifyContent: 'space-between', minHeight: '55px', margin: '0px 14px' }}>
+                <div style={{ alignItems: 'center', display: 'flex' }}>
+                  <div style={{ alignItems: 'flex-start', display: 'flex', flexDirection: 'column', height: '38px', justifyContent: 'space-between' }}>
+                    <div style={{ color: '#2b2826', display: 'flex', fontSize: '15px', fontWeight: 500 }}>
+                      ARPDAU
+                      <div>
+                        <Popover placement="rightTop" title={PopoverTitle} content={PopoverContent[2]} trigger="click">
+                          <Icon type="info-circle" theme="filled" style={{ color: '#dddbda', cursor: 'pointer', marginLeft: '8px' }} />
+                        </Popover>
+                      </div>
+                    </div>
+                    <div style={{ color: '#969492', fontSize: '12px', lineHeight: '16px' }}>ARPDAU (MEAN)</div>
+                  </div>
+                </div>
+                <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
+                  <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
+                    <div>
+                      <div style={{ display: 'flex' }}>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                      </div>
+                      <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
+                        <span className='total'> ${(ARPDAU[0] + ARPDAU[1] + ARPDAU[2] + ARPDAU[3] + ARPDAU[4]).toFixed(2)} </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ borderRadius: '3px', cursor: 'pointer', fontSize: '14px', padding: '2px', position: 'absolute', right: '2px', top: '2px' }}>
+                  <Icon type="arrows-alt" />
+                </div>
+              </div>
               <Spin spinning={this.state.isLoading}>
                 <Bar
                   data={{
@@ -381,17 +471,49 @@ class Summary extends Component {
                   }}
                 />
               </Spin>
-            </Card>
+            </div>
             {/* </li> */}
           </Col>
         </Row>
 
         <br />
 
-        <Row>
-          <Col span={12}>
+        <Row gutter={24}>
+          <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             {/* <li> */}
-            <Card size="small" title="ARPPU" style={{ margin: 'auto' }} >
+            <div style={{ background: '#FFF', border: '1px solid #ddd', borderRadius: '5px', position: 'relative' }}>
+              <div style={{ alignItems: 'center', borderBottom: '1px solid #f3f2f2', display: 'flex', justifyContent: 'space-between', minHeight: '55px', margin: '0px 14px' }}>
+                <div style={{ alignItems: 'center', display: 'flex' }}>
+                  <div style={{ alignItems: 'flex-start', display: 'flex', flexDirection: 'column', height: '38px', justifyContent: 'space-between' }}>
+                    <div style={{ color: '#2b2826', display: 'flex', fontSize: '15px', fontWeight: 500 }}>
+                      ARPPU
+                      <div>
+                        <Popover placement="rightTop" title={PopoverTitle} content={PopoverContent[3]} trigger="click">
+                          <Icon type="info-circle" theme="filled" style={{ color: '#dddbda', cursor: 'pointer', marginLeft: '8px' }} />
+                        </Popover>
+                      </div>
+                    </div>
+                    <div style={{ color: '#969492', fontSize: '12px', lineHeight: '16px' }}>ARPPU (MEAN)</div>
+                  </div>
+                </div>
+                <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
+                  <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
+                    <div>
+                      <div style={{ display: 'flex' }}>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                      </div>
+                      <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
+                        <span className='total'> ${(ARPDAU[0] + ARPDAU[1] + ARPDAU[2] + ARPDAU[3] + ARPDAU[4]).toFixed(2)} </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ borderRadius: '3px', cursor: 'pointer', fontSize: '14px', padding: '2px', position: 'absolute', right: '2px', top: '2px' }}>
+                  <Icon type="arrows-alt" />
+                </div>
+              </div>
               <Spin spinning={this.state.isLoading}>
                 <Line
                   data={{
@@ -430,12 +552,39 @@ class Summary extends Component {
                   }}
                 />
               </Spin>
-            </Card>
+            </div>
             {/* </li> */}
           </Col>
-          <Col span={12}>
+          <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             {/* <li> */}
-            <Card size="small" title="Paying user" style={{ margin: 'auto' }} >
+            <div style={{ background: '#FFF', border: '1px solid #ddd', borderRadius: '5px', position: 'relative' }}>
+              <div style={{ alignItems: 'center', borderBottom: '1px solid #f3f2f2', display: 'flex', justifyContent: 'space-between', minHeight: '55px', margin: '0px 14px' }}>
+                <div style={{ alignItems: 'center', display: 'flex' }}>
+                  <div style={{ alignItems: 'flex-start', display: 'flex', flexDirection: 'column', height: '38px', justifyContent: 'space-between' }}>
+                    <div style={{ color: '#2b2826', display: 'flex', fontSize: '15px', fontWeight: 500 }}>
+                      Paying users
+                    </div>
+                    <div style={{ color: '#969492', fontSize: '12px', lineHeight: '16px' }}>DAU (SUM)</div>
+                  </div>
+                </div>
+                <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
+                  <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
+                    <div>
+                      <div style={{ display: 'flex' }}>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                      </div>
+                      <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
+                        <span className='total'> {(ARPDAU[0] + ARPDAU[1] + ARPDAU[2] + ARPDAU[3] + ARPDAU[4]).toFixed(2)} </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ borderRadius: '3px', cursor: 'pointer', fontSize: '14px', padding: '2px', position: 'absolute', right: '2px', top: '2px' }}>
+                  <Icon type="arrows-alt" />
+                </div>
+              </div>
               <Spin spinning={this.state.isLoading}>
                 <Line
                   data={{
@@ -474,14 +623,49 @@ class Summary extends Component {
                   }}
                 />
               </Spin>
-            </Card>
+            </div>
             {/* </li> */}
           </Col>
-        </Row> <br />
+        </Row> 
+        
+        <br />
+        
         <Row>
           <Col span={24}>
             {/* <li> */}
-            <Card size="small" title="Revenue per item" style={{ margin: 'auto' }} >
+            <div style={{ background: '#FFF', border: '1px solid #ddd', borderRadius: '5px', position: 'relative' }}>
+              <div style={{ alignItems: 'center', borderBottom: '1px solid #f3f2f2', display: 'flex', justifyContent: 'space-between', minHeight: '55px', margin: '0px 14px' }}>
+                <div style={{ alignItems: 'center', display: 'flex' }}>
+                  <div style={{ alignItems: 'flex-start', display: 'flex', flexDirection: 'column', height: '38px', justifyContent: 'space-between' }}>
+                    <div style={{ color: '#2b2826', display: 'flex', fontSize: '15px', fontWeight: 500 }}>
+                      Revenue per item
+                      <div>
+                        <Popover placement="rightTop" title={PopoverTitle} content={PopoverContent[0]} trigger="click">
+                          <Icon type="info-circle" theme="filled" style={{ color: '#dddbda', cursor: 'pointer', marginLeft: '8px' }} />
+                        </Popover>
+                      </div>
+                    </div>
+                    <div style={{ color: '#969492', fontSize: '12px', lineHeight: '16px' }}>Revenue per transaction (SUM)</div>
+                  </div>
+                </div>
+                <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
+                  <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
+                    <div>
+                      <div style={{ display: 'flex' }}>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> Sum </span></div>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> Mean </span></div>
+                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> Count </span></div>
+                      </div>
+                      <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
+                        <span className='total'> ${(revenue[0] + revenue[1] + revenue[2] + revenue[3] + revenue[4]).toFixed(2)} </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ borderRadius: '3px', cursor: 'pointer', fontSize: '14px', padding: '2px', position: 'absolute', right: '2px', top: '2px' }}>
+                  <Icon type="arrows-alt" />
+                </div>
+              </div>
               <Spin spinning={this.state.isLoading}>
                 <Line
                   data={{
@@ -520,7 +704,7 @@ class Summary extends Component {
                   }}
                 />
               </Spin>
-            </Card>
+            </div>
             {/* </li> */}
           </Col>
         </Row>
@@ -528,16 +712,20 @@ class Summary extends Component {
 
         <br />
 
-        <div style={{ paddingBottom: '30px' }}>
-          <Spin spinning={this.state.isLoading}>
-            <Table columns={columns} dataSource={data} style={{ margin: 'auto', background: 'white' }} />
-          </Spin>
-          <div style={{ width: '101.21px', height: '40px', margin: 'auto', paddingTop: '6px', paddingBottom: '6px' }}>
-            <Button type="primary" icon="download" size='large'>
-              Export
+        <Row>
+          <Col span={24}>
+            <div style={{ paddingBottom: '30px' }}>
+              <Spin spinning={this.state.isLoading}>
+                <Table columns={columns} dataSource={data} style={{ margin: 'auto', background: 'white' }} />
+              </Spin>
+              <div style={{ width: '101.21px', height: '40px', margin: 'auto', paddingTop: '6px', paddingBottom: '6px' }}>
+                <Button type="primary" icon="download" size='large'>
+                  Export
               </Button>
-          </div>
-        </div>
+              </div>
+            </div>
+          </Col>
+        </Row>
       </React.Fragment>
     )
   }
