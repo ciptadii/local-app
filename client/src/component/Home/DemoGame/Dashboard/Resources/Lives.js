@@ -6,7 +6,7 @@ import {
   Icon
 } from 'antd';
 
-import { Line, Bar } from '../../../../../../node_modules/react-chartjs-2';
+import { Line } from '../../../../../../node_modules/react-chartjs-2';
 
 export class Lives extends Component {
   state = {
@@ -35,11 +35,7 @@ export class Lives extends Component {
         <p>wait</p>
       )
     }
-    const date = chartData.thisWeek;
     const revenue = chartData.revenue;
-    const transactions = chartData.transactions;
-    const conversionRate = chartData.conversionRate;
-    const ARPDAU = chartData.ARPDAU;
 
     return (
       <React.Fragment>
@@ -371,7 +367,7 @@ export class Lives extends Component {
                   </div>
                 </div>
                 <Spin spinning={this.state.isLoading}>
-                  <Bar
+                  <Line
                     data={{
                       labels: chartData.thisWeek,
                       datasets: [

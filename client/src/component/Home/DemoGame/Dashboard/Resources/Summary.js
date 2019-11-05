@@ -37,11 +37,7 @@ export class Summary extends Component {
         <p>wait</p>
       )
     }
-    const date = chartData.thisWeek;
     const revenue = chartData.revenue;
-    const transactions = chartData.transactions;
-    const conversionRate = chartData.conversionRate;
-    const ARPDAU = chartData.ARPDAU;
 
     return (
       <React.Fragment>

@@ -36,11 +36,7 @@ class Monetization_behaviour extends Component {
         <p>wait</p>
       )
     }
-    const date = chartData.thisWeek;
     const revenue = chartData.revenue;
-    const transactions = chartData.transactions;
-    const conversionRate = chartData.conversionRate;
-    const ARPDAU = chartData.ARPDAU;
 
     // Data Popover
     const PopoverTitle = <span style={{ fontSize: '10px', color: '#AAA' }}>METRIC DEFINITION</span>;
@@ -104,7 +100,7 @@ class Monetization_behaviour extends Component {
                   </div>
                 </div>
                 <Spin spinning={this.state.isLoading}>
-                  <Line
+                  <Bar
                     data={{
                       labels: chartData.thisWeek,
                       datasets: [
@@ -261,7 +257,7 @@ class Monetization_behaviour extends Component {
                   </div>
                 </div>
                 <Spin spinning={this.state.isLoading}>
-                  <Line
+                  <Bar
                     data={{
                       labels: chartData.thisWeek,
                       datasets: [
@@ -337,7 +333,7 @@ class Monetization_behaviour extends Component {
                   </div>
                 </div>
                 <Spin spinning={this.state.isLoading}>
-                  <Bar
+                  <Line
                     data={{
                       labels: chartData.thisWeek,
                       datasets: [
@@ -418,7 +414,7 @@ class Monetization_behaviour extends Component {
                   </div>
                 </div>
                 <Spin spinning={this.state.isLoading}>
-                  <Line
+                  <Bar
                     data={{
                       labels: chartData.thisWeek,
                       datasets: [
@@ -494,7 +490,7 @@ class Monetization_behaviour extends Component {
                   </div>
                 </div>
                 <Spin spinning={this.state.isLoading}>
-                  <Line
+                  <Bar
                     data={{
                       labels: chartData.thisWeek,
                       datasets: [
@@ -575,7 +571,7 @@ class Monetization_behaviour extends Component {
                   </div>
                 </div>
                 <Spin spinning={this.state.isLoading}>
-                  <Line
+                  <Bar
                     data={{
                       labels: chartData.thisWeek,
                       datasets: [
@@ -651,7 +647,7 @@ class Monetization_behaviour extends Component {
                   </div>
                 </div>
                 <Spin spinning={this.state.isLoading}>
-                  <Line
+                  <Bar
                     data={{
                       labels: chartData.thisWeek,
                       datasets: [

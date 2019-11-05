@@ -18,7 +18,7 @@ import {
 import Monetization from '../DemoGame/Dashboard/Monetization/Monetization';
 import Resources from './Dashboard/Resources/Resources';
 
-const { Content, Sider } = Layout;
+const {  Sider } = Layout;
 const { SubMenu } = Menu;
 const { Search } = Input;
 
@@ -73,18 +73,20 @@ class DemoGame extends React.Component {
     );
 
     return (
-        <Layout>
+        <Layout style={{ minHeight: '100vh' }}>
           <Sider
             collapsible
             collapsed={this.state.collapsed}
             onCollapse={this.onCollapse}
             style={{
               overflow: 'auto',
-              position: 'fixed',
               height: '100vh',
+              position: 'fixed',
+              minHeight: '100vh',
+              zIndex: 99,
               left: 0,
-              zIndex: 1
-            }}>
+            }}
+            >
 
             <Button type='link' style={{ width: '200px', height: '50px', padding: 0 }}>
               <Dropdown
@@ -152,12 +154,10 @@ class DemoGame extends React.Component {
           </Sider>
 
           <Layout style={{ marginLeft: '200px' }}>
-            <Content>
               <Switch>
                 <Route path={`${path}/show/monetization`} component={Monetization} />
                 <Route path={`${path}/show/resources`} component={Resources} />
               </Switch>
-            </Content>
           </Layout>
         </Layout>
     );

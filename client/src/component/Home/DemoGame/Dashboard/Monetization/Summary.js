@@ -44,6 +44,36 @@ class Summary extends Component {
     const conversionRate = chartData.conversionRate;
     const ARPDAU = chartData.ARPDAU;
 
+    // load data with foreach
+    // const dataLoaded = [];
+    // if(chartData.thisWeek){
+    //   chartData.thisWeek.forEach((item, key) => {
+    //     dataLoaded.push({
+    //       key,
+    //       date: item,
+    //       revenue: 32,
+    //       transactions: 'New York No. 1 Lake Park',
+    //       conversion: 'nice',
+    //       arpdau: 'good',
+    //       arppu: 'excelent',
+    //       dau: 'bad'
+    //     })
+    //   })
+    // }console.log(dataLoaded);
+
+    // const dataLoaded =  [];
+    // if(chartData.thisWeek){
+    //   chartData.thisWeek.forEach( (item, key) => {
+    //     dataLoaded.push({
+    //       key,
+    //       date: item,
+    //       age: 32,
+    //       address: 'New York No. 1 Lake Park',
+    //       tags: ['nice', 'developer'],
+    //     });
+    //   }) 
+    // }
+
     // Data Popover
     const PopoverTitle = <span style={{ fontSize: '10px', color: '#AAA' }}>METRIC DEFINITION</span>;
     const PopoverContent =
