@@ -80,21 +80,21 @@ class Summary extends Component {
       [
         <div style={{ fontSize: '12px', color: '#262626' }}>
           <p>
-            <b>SUM:</b> Total Revenue<br/>
-            <b>MEAN:</b> Avg. revenue per transaction.<br/>
+            <b>SUM:</b> Total Revenue<br />
+            <b>MEAN:</b> Avg. revenue per transaction.<br />
             <b>COUNT:</b> Total Transaction
           </p>
         </div>,
         <div style={{ fontSize: '12px', color: '#262626' }}>
-          <p>The percent of your users who<br/>
+          <p>The percent of your users who<br />
             made a purchase on that day</p>
         </div>,
         <div style={{ fontSize: '12px', color: '#262626' }}>
-          <p>Average revenue per daily<br/>
-          active user</p>
+          <p>Average revenue per daily<br />
+            active user</p>
         </div>,
         <div style={{ fontSize: '12px', color: '#262626' }}>
-          <p>Average revenue per paying<br/>
+          <p>Average revenue per paying<br />
             user</p>
         </div>
       ];
@@ -127,16 +127,16 @@ class Summary extends Component {
         dataIndex: 'arpdau',
         key: 'arpdau',
       },
-      // {
-      //   title: 'ARPPU',
-      //   dataIndex: 'arppu',
-      //   key: 'arppu',
-      // },
-      // {
-      //   title: 'DAU',
-      //   dataIndex: 'dau',
-      //   key: 'dau',
-      // }
+      {
+        title: 'ARPPU',
+        dataIndex: 'arppu',
+        key: 'arppu',
+      },
+      {
+        title: 'DAU',
+        dataIndex: 'dau',
+        key: 'dau',
+      }
     ];
 
     const data = [
@@ -656,10 +656,10 @@ class Summary extends Component {
             </div>
             {/* </li> */}
           </Col>
-        </Row> 
-        
+        </Row>
+
         <br />
-        
+
         <Row>
           <Col span={24}>
             {/* <li> */}
@@ -746,12 +746,19 @@ class Summary extends Component {
           <Col span={24}>
             <div style={{ paddingBottom: '30px' }}>
               <Spin spinning={this.state.isLoading}>
-                <Table columns={columns} dataSource={data} style={{ margin: 'auto', background: 'white' }} />
+                <Table 
+                  columns={columns} 
+                  dataSource={data} 
+                  bordered
+                  pagination={false}
+                  size="small" 
+                  scroll={{ x: 1300 }}
+                  style={{ margin: 'auto', background: 'white' }} />
               </Spin>
               <div style={{ width: '101.21px', height: '40px', margin: 'auto', paddingTop: '6px', paddingBottom: '6px' }}>
                 <Button type="primary" icon="download" size='large'>
                   Export
-              </Button>
+                </Button>
               </div>
             </div>
           </Col>
