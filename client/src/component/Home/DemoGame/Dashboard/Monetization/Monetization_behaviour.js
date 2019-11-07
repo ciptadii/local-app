@@ -16,7 +16,7 @@ class Monetization_behaviour extends Component {
   };
 
   componentDidMount() {
-    fetch('https://my-json-server.typicode.com/ciptadii/jsonserver/db')
+    fetch('http://localhost:3002/db')
       .then(response => response.json())
       .then(data => this.setState({ chartData: data, isLoading: false }))
   }
