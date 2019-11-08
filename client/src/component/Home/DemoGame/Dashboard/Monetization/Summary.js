@@ -43,6 +43,8 @@ class Summary extends Component {
     const transactions = chartData.transactions;
     const conversionRate = chartData.conversionRate;
     const ARPDAU = chartData.ARPDAU;
+    const ARPPU = chartData.ARPPU;
+    const DAU = chartData.DAU;
 
     // load data with foreach
     // const dataLoaded = [];
@@ -136,6 +138,11 @@ class Summary extends Component {
         title: 'DAU',
         dataIndex: 'dau',
         key: 'dau',
+      },
+      {
+        title: 'Revenue per transaction',
+        dataIndex: 'revenue',
+        key: 'revenue',
       }
     ];
 
@@ -146,7 +153,11 @@ class Summary extends Component {
         revenue: "$" + revenue[0],
         transactions: "$" + transactions[0],
         conversion: conversionRate[0] + "%",
-        arpdau: "$" + ARPDAU[0]
+        arpdau: "$" + ARPDAU[0],
+        arppu: "$" + ARPPU[0],
+        dau: DAU[0],
+        revenue2: "$" + revenue[0]
+
       },
       {
         key: '2',
@@ -154,7 +165,10 @@ class Summary extends Component {
         revenue: "$" + revenue[1],
         transactions: "$" + transactions[1],
         conversion: conversionRate[1] + "%",
-        arpdau: "$" + ARPDAU[1]
+        arpdau: "$" + ARPDAU[1],
+        arppu: "$" + ARPPU[1],
+        dau: DAU[1],
+        revenue2: "$" + revenue[1]
       },
       {
         key: '3',
@@ -162,7 +176,10 @@ class Summary extends Component {
         revenue: "$" + revenue[2],
         transactions: "$" + transactions[2],
         conversion: conversionRate[2] + "%",
-        arpdau: "$" + ARPDAU[2]
+        arpdau: "$" + ARPDAU[2],
+        arppu: "$" + ARPPU[2],
+        dau: DAU[2],
+        revenue2: "$" + revenue[2]
       },
       {
         key: '4',
@@ -170,7 +187,10 @@ class Summary extends Component {
         revenue: "$" + revenue[3],
         transactions: "$" + transactions[3],
         conversion: conversionRate[3] + "%",
-        arpdau: "$" + ARPDAU[3]
+        arpdau: "$" + ARPDAU[3],
+        arppu: "$" + ARPPU[3],
+        dau: DAU[3],
+        revenue2: "$" + revenue[3]
       },
       {
         key: '5',
@@ -178,7 +198,10 @@ class Summary extends Component {
         revenue: "$" + revenue[4],
         transactions: "$" + transactions[4],
         conversion: conversionRate[4] + "%",
-        arpdau: "$" + ARPDAU[4]
+        arpdau: "$" + ARPDAU[4],
+        arppu: "$" + ARPPU[4],
+        dau: DAU[4],
+        revenue2: "$" + revenue[4]
       },
       {
         key: '6',
@@ -186,7 +209,10 @@ class Summary extends Component {
         revenue: "$" + (revenue[0] + revenue[1] + revenue[2] + revenue[3] + revenue[4]).toFixed(2),
         transactions: "$" + (transactions[0] + transactions[1] + transactions[2] + transactions[3] + transactions[4]).toFixed(2),
         conversion: (conversionRate[0] + conversionRate[1] + conversionRate[2] + conversionRate[3] + conversionRate[4]).toFixed(2) + "%",
-        arpdau: "$" + (ARPDAU[0] + ARPDAU[1] + ARPDAU[2] + ARPDAU[3] + ARPDAU[4]).toFixed(2)
+        arpdau: "$" + (ARPDAU[0] + ARPDAU[1] + ARPDAU[2] + ARPDAU[3] + ARPDAU[4]).toFixed(2),
+        arppu: "$" + (ARPPU[0] + ARPPU[1] + ARPPU[2] + ARPPU[3] + ARPPU[4]).toFixed(2),
+        dau: (DAU[0] + DAU[1] + DAU[2] + DAU[3] + DAU[4]),
+        revenue2: "$" + (revenue[0] + revenue[1] + revenue[2] + revenue[3] + revenue[4]).toFixed(2)
       }
     ];
 
@@ -750,6 +776,7 @@ class Summary extends Component {
                   columns={columns} 
                   dataSource={data} 
                   bordered
+                  fontSize={12 }
                   pagination={false}
                   size="small" 
                   scroll={{ x: 1300 }}
