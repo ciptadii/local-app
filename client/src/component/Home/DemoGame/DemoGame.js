@@ -1,7 +1,7 @@
 import React from 'react';
-import { 
-  Route, 
-  Link, 
+import {
+  Route,
+  Link,
   Switch,
   withRouter
 } from "react-router-dom";
@@ -18,14 +18,14 @@ import {
 import Monetization from '../DemoGame/Dashboard/Monetization/Monetization';
 import Resources from './Dashboard/Resources/Resources';
 
-const {  Sider } = Layout;
+const { Sider } = Layout;
 const { SubMenu } = Menu;
 const { Search } = Input;
 
 class DemoGame extends React.Component {
   state = {
     collapsed: false,
-    visible: false,
+    visible: false
   };
 
   onCollapse = collapsed => {
@@ -73,93 +73,93 @@ class DemoGame extends React.Component {
     );
 
     return (
-        <Layout style={{ minHeight: '100vh' }}>
-          <Sider
-            collapsible
-            collapsed={this.state.collapsed}
-            onCollapse={this.onCollapse}
-            style={{
-              overflow: 'auto',
-              height: '100vh',
-              position: 'fixed',
-              minHeight: '100vh',
-              zIndex: 99,
-              left: 0,
-            }}
+      <Layout style={{ minHeight: '100vh' }}>
+        <Sider
+          collapsible
+          collapsed={this.state.collapsed}
+          onCollapse={this.onCollapse}
+          style={{
+            overflow: 'auto',
+            height: '100vh',
+            position: 'fixed',
+            minHeight: '100vh',
+            zIndex: 99,
+            left: 0,
+          }}
+        >
+
+          <Button type='link' style={{ width: '200px', height: '50px', padding: 0 }}>
+            <Dropdown
+              overlay={menu} trigger={['click']}
+              onVisibleChange={this.handleVisibleChange}
+              visible={this.state.visible}
             >
-
-            <Button type='link' style={{ width: '200px', height: '50px', padding: 0 }}>
-              <Dropdown
-                overlay={menu} trigger={['click']}
-                onVisibleChange={this.handleVisibleChange}
-                visible={this.state.visible}
-              >
-                <div className="logo" style={{ padding: '4px 8px', borderBottom: '1px white solid', height: '50px' }}>
-                  <Avatar
-                    src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-joystick-game-graphic-design-element-vector-illustration-png-image_3698982.jpg"
-                    style={{ marginBottom: '25px' }}
-                  />
-                  <div style={{ display: 'inline-block', textAlign: 'left', width: '140px', paddingLeft: '10px', color: 'white' }}>
-                    <span><b>Demo Game</b></span> <br />
-                    <span style={{ fontSize: '12px' }}>GameAnalytics</span>
-                  </div>
-                  <div style={{ display: 'inline-block', float: 'right', marginTop: '10px', width: '9px' }}>
-                    <Icon type="down" style={{ color: 'white', margin: 'auto', fontSize: '9px' }} />
-                  </div>
+              <div className="logo" style={{ padding: '4px 8px', borderBottom: '1px white solid', height: '50px' }}>
+                <Avatar
+                  src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-joystick-game-graphic-design-element-vector-illustration-png-image_3698982.jpg"
+                  style={{ marginBottom: '25px' }}
+                />
+                <div style={{ display: 'inline-block', textAlign: 'left', width: '140px', paddingLeft: '10px', color: 'white' }}>
+                  <span><b>Demo Game</b></span> <br />
+                  <span style={{ fontSize: '12px' }}>GameAnalytics</span>
                 </div>
-              </Dropdown>
-            </Button>
+                <div style={{ display: 'inline-block', float: 'right', marginTop: '10px', width: '9px' }}>
+                  <Icon type="down" style={{ color: 'white', margin: 'auto', fontSize: '9px' }} />
+                </div>
+              </div>
+            </Dropdown>
+          </Button>
 
-            <Menu theme="dark" defaultSelectedKeys={['dashboard']} mode="inline">
-              {/* <Menu.Item key="realtime">
+          <Menu theme="dark" defaultSelectedKeys={['dashboard']} mode="inline">
+            {/* <Menu.Item key="realtime">
                 <Icon type="search" />
                 <span>Realtime</span>
               </Menu.Item> */}
-              <SubMenu
-                key="dashboard"
-                title={
-                  <span>
-                    <Icon type="dashboard" />
-                    <span>Dashboards</span>
-                  </span>
-                }
-              >
-                <Menu.Item key="overview"><Icon type="dashboard" />Overview</Menu.Item>
-                <Menu.Item key="engagement"><Icon type="deployment-unit" />Engagement</Menu.Item>
-                <Menu.Item key="benchmarks"><Icon type="deployment-unit" />Benchmarks</Menu.Item>
-                <Menu.Item key="monetization"><Icon type="deployment-unit" />
-                  Monetization
+            <SubMenu
+              key="dashboard"
+              title={
+                <span>
+                  <Icon type="dashboard" />
+                  <span>Dashboards</span>
+                </span>
+              }
+            >
+              <Menu.Item key="overview"><Icon type="dashboard" />Overview</Menu.Item>
+              <Menu.Item key="engagement"><Icon type="deployment-unit" />Engagement</Menu.Item>
+              <Menu.Item key="benchmarks"><Icon type="deployment-unit" />Benchmarks</Menu.Item>
+              <Menu.Item key="monetization"><Icon type="deployment-unit" />
+                Monetization
                   <Link to={`${url}/show/monetization`} />
-                </Menu.Item>
-                <Menu.Item key="resources"><Icon type="deployment-unit" />
-                  Resources
+              </Menu.Item>
+              <Menu.Item key="resources"><Icon type="deployment-unit" />
+                Resources
                   <Link to={`${url}/show/resources`} />
-                </Menu.Item>
-                <Menu.Item key="progression"><Icon type="deployment-unit" />Progression</Menu.Item>
-                <Menu.Item key="quality"><Icon type="deployment-unit" />Quality</Menu.Item>
-              </SubMenu>
-              <Menu.Item key="explore">
-                <Icon type="search" />
-                <span>Explore</span>
               </Menu.Item>
-              <Menu.Item key="funnels">
-                <Icon type="funnel-plot" />
-                <span>Funnels</span>
-              </Menu.Item>
-              <Menu.Item key="development">
-                <Icon type="deployment-unit" />
-                <span>Cohorts</span>
-              </Menu.Item>
-            </Menu>
-          </Sider>
+              <Menu.Item key="progression"><Icon type="deployment-unit" />Progression</Menu.Item>
+              <Menu.Item key="quality"><Icon type="deployment-unit" />Quality</Menu.Item>
+            </SubMenu>
+            <Menu.Item key="explore">
+              <Icon type="search" />
+              <span>Explore</span>
+            </Menu.Item>
+            <Menu.Item key="funnels">
+              <Icon type="funnel-plot" />
+              <span>Funnels</span>
+            </Menu.Item>
+            <Menu.Item key="development">
+              <Icon type="deployment-unit" />
+              <span>Cohorts</span>
+            </Menu.Item>
+          </Menu>
+        </Sider>
 
-          <Layout style={{ marginLeft: '200px' }}>
-              <Switch>
-                <Route path={`${path}/show/monetization`} component={Monetization} />
-                <Route path={`${path}/show/resources`} component={Resources} />
-              </Switch>
-          </Layout>
+        <Layout style={{ marginLeft: '200px' }}>
+          <Switch>
+            <Route path={`${path}/show/monetization`} component={Monetization} />
+            <Route path={`${path}/show/resources`} component={Resources} />
+          </Switch>
         </Layout>
+      </Layout>
     );
   }
 }

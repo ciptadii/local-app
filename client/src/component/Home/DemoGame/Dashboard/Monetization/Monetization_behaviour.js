@@ -84,10 +84,7 @@ class Monetization_behaviour extends Component {
                   <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
                     <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
                       <div>
-                        <div style={{ display: 'flex' }}>
-                          <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                          <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                          <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                        <div style={{ display: 'flex', height: '17.6px' }}>
                         </div>
                         <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
                           <span className='total'> ${(revenue[0] + revenue[1] + revenue[2] + revenue[3] + revenue[4]).toFixed(2)} </span>
@@ -160,10 +157,7 @@ class Monetization_behaviour extends Component {
                   <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
                     <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
                       <div>
-                        <div style={{ display: 'flex' }}>
-                          <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                          <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                          <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                        <div style={{ display: 'flex', height: '17.6px' }}>
                         </div>
                         <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
                           <span className='total'> ${(revenue[0] + revenue[1] + revenue[2] + revenue[3] + revenue[4]).toFixed(2)} </span>
@@ -241,10 +235,7 @@ class Monetization_behaviour extends Component {
                   <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
                     <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
                       <div>
-                        <div style={{ display: 'flex' }}>
-                          <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                          <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                          <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                        <div style={{ display: 'flex', height: '17.6px' }}>
                         </div>
                         <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
                           <span className='total'> ${(revenue[0] + revenue[1] + revenue[2] + revenue[3] + revenue[4]).toFixed(2)} </span>
@@ -555,10 +546,7 @@ class Monetization_behaviour extends Component {
                   <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
                     <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
                       <div>
-                        <div style={{ display: 'flex' }}>
-                          <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                          <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                          <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                        <div style={{ display: 'flex', height: '17.6px' }}>
                         </div>
                         <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
                           <span className='total'> ${(revenue[0] + revenue[1] + revenue[2] + revenue[3] + revenue[4]).toFixed(2)} </span>
@@ -631,10 +619,7 @@ class Monetization_behaviour extends Component {
                   <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
                     <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
                       <div>
-                        <div style={{ display: 'flex' }}>
-                          <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                          <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                          <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                        <div style={{ display: 'flex', height: '17.6px' }}>
                         </div>
                         <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
                           <span className='total'> ${(revenue[0] + revenue[1] + revenue[2] + revenue[3] + revenue[4]).toFixed(2)} </span>

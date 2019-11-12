@@ -317,10 +317,7 @@ class Summary extends Component {
                 <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
                   <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
                     <div>
-                      <div style={{ display: 'flex' }}>
-                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                      <div style={{ display: 'flex', height: '17.6px' }}>
                       </div>
                       <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
                         <span className='total'> ${(transactions[0] + transactions[1] + transactions[2] + transactions[3] + transactions[4]).toFixed(2)} </span>
@@ -398,10 +395,7 @@ class Summary extends Component {
                 <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
                   <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
                     <div>
-                      <div style={{ display: 'flex' }}>
-                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                      <div style={{ display: 'flex', height: '17.6px' }}>
                       </div>
                       <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
                         <span className='total'> {(conversionRate[0] + conversionRate[1] + conversionRate[2] + conversionRate[3] + conversionRate[4]).toFixed(2)}% </span>
@@ -474,10 +468,7 @@ class Summary extends Component {
                 <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
                   <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
                     <div>
-                      <div style={{ display: 'flex' }}>
-                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                      <div style={{ display: 'flex', height: '17.6px' }}>
                       </div>
                       <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
                         <span className='total'> ${(ARPDAU[0] + ARPDAU[1] + ARPDAU[2] + ARPDAU[3] + ARPDAU[4]).toFixed(2)} </span>
@@ -555,10 +546,7 @@ class Summary extends Component {
                 <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
                   <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
                     <div>
-                      <div style={{ display: 'flex' }}>
-                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                      <div style={{ display: 'flex', height: '17.6px' }}>
                       </div>
                       <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
                         <span className='total'> ${(ARPDAU[0] + ARPDAU[1] + ARPDAU[2] + ARPDAU[3] + ARPDAU[4]).toFixed(2)} </span>
@@ -626,10 +614,7 @@ class Summary extends Component {
                 <div style={{ alignItems: 'flex-end', display: 'flex', height: '38px' }}>
                   <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between', minWidth: '86px', padding: '0 8px' }}>
                     <div>
-                      <div style={{ display: 'flex' }}>
-                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
-                        <div style={{ color: '#969492', fontSize: '12px', marginLeft: '6px', cursor: 'pointer' }}><span> . </span></div>
+                      <div style={{ display: 'flex', height: '17.6px' }}>
                       </div>
                       <div style={{ color: '#2b2826', fontSize: '18px', fontWeight: 500, minWidth: '66px', textAlign: 'right' }}>
                         <span className='total'> {(ARPDAU[0] + ARPDAU[1] + ARPDAU[2] + ARPDAU[3] + ARPDAU[4]).toFixed(2)} </span>
