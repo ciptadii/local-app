@@ -757,13 +757,13 @@ class Summary extends Component {
           <Col span={24}>
             <div style={{ paddingBottom: '30px' }}>
               <Spin spinning={this.state.isLoading}>
-                <Table 
-                  columns={columns} 
-                  dataSource={data} 
+                <Table
+                  columns={columns}
+                  dataSource={data}
                   bordered
-                  fontSize={12 }
+                  fontSize={12}
                   pagination={false}
-                  size="small" 
+                  size="small"
                   scroll={{ x: 1300 }}
                   style={{ margin: 'auto', background: 'white' }} />
               </Spin>

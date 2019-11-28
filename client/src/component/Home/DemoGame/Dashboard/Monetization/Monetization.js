@@ -11,7 +11,7 @@ import {
   Icon,
   Button,
   DatePicker,
-  Cascader
+  Select
 } from 'antd';
 import moment from 'moment';
 
@@ -23,42 +23,16 @@ const { Header, Content } = Layout;
 const { SubMenu } = Menu;
 
 // PopUp Calendar
-const {  RangePicker } = DatePicker;
+const { RangePicker } = DatePicker;
 
 const dateFormat = 'YYYY/MM/DD';
 
-// Cascader data
-const options = [
-  {
-    value: 'noSplit',
-    label: [<Icon type="close-square" />, <b> NO SPLIT</b>]
-  },
-  {
-    value: 'advancedSplit',
-    label: [<Icon type="column-width" />, <b> ADVANCED SPLIT</b>]
-  },
-  {
-    value: 'adFilters',
-    label: 'Top Ad filters'
-  },
-  {
-    value: 'adGroupFilters',
-    label: 'Top Ad Group filters'
-  },
-  {
-    value: 'topCampaign',
-    label: 'Top Campaign filters'
-  },
-  {
-    value: 'topKeyword',
-    label: 'Top Keyword filters'
-  },
-  {
-    value: 'topPublishers',
-    label: 'Top Publishers filters'
-  }
+// Select
+const { Option } = Select;
 
-];
+function handleChange(value) {
+  console.log(`selected ${value}`);
+}
 
 export class Monetization extends Component {
   state = {
@@ -76,11 +50,6 @@ export class Monetization extends Component {
 
   render() {
     const { path, url } = this.props.match;
-
-    // Cascade
-    function onChange(value) {
-      console.log(value);
-    }
 
     return (
       <React.Fragment>
@@ -140,7 +109,31 @@ export class Monetization extends Component {
                     <span> <Button><Icon type="plus" /> FILTERS</Button> </span>
                     <span style={{ float: 'right' }}>
                       <span style={{ paddingRight: '10px' }}>SPLIT</span>
-                      <Cascader options={options} onChange={onChange} placeholder="Please select" />
+                      <Select
+                        defaultValue="no-split" 
+                        style={{ width: 200 }} 
+                        onChange={handleChange}
+                      >
+                        <Option value="no-split"><Icon type="close-square" /><b> NO SPLIT</b></Option>
+                        <Option value="advanced-split"><Icon type="column-width" /><b> ADVANCED SPLIT</b></Option>
+                        <Option value="ad">Top Ad filters</Option>
+                        <Option value="ad-group">Top Ad Group filters</Option>
+                        <Option value="campaign">Top Campaign filters</Option>
+                        <Option value="keyword">Top Keyword filters</Option>
+                        <Option value="publishers">Top Publishers filters</Option>
+                        <Option value="site">Top Site filters</Option>
+                        <Option value="build">Top Build filters</Option>
+                        <Option value="cart-type">Top Cart type filters</Option>
+                        <Option value="converting-users">Top Converting Users filters</Option>
+                        <Option value="country">Top Country filters</Option>
+                        <Option value="custom1">Top Custom 1 filters</Option>
+                        <Option value="custom2">Top Custom 2 filters</Option>
+                        <Option value="custom3">Top Custom 3 filters</Option>
+                        <Option value="device">Top Device filters</Option>
+                        <Option value="os-version">Top OS Version filters</Option>
+                        <Option value="platform">Top Platform filters</Option>
+                        <Option value="receipt-status">Top Receipt Status filters</Option>
+                      </Select>
                     </span>
                   </div>
                 </div>
